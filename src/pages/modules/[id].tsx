@@ -490,6 +490,23 @@ export default function ModulePage() {
     return textAnswers
   }
   
+  // 🔧 HELPER: Remove emojis from text for comparison
+  const removeEmojis = (text: string): string => {
+    // Remove all emojis and extra whitespace
+    return text
+      .replace(/[\u{1F300}-\u{1F9FF}]|[\u{2600}-\u{26FF}]|[\u{2700}-\u{27BF}]/gu, '') // Remove emojis
+      .replace(/\s+/g, ' ') // Normalize whitespace
+      .trim()
+      .toLowerCase()
+  }
+  
+  // 🔧 HELPER: Fuzzy text match - ignores emojis and case
+  const fuzzyTextMatch = (text1: string, text2: string): boolean => {
+    const clean1 = removeEmojis(text1)
+    const clean2 = removeEmojis(text2)
+    return clean1 === clean2
+  }
+  
   // 🔄 HELPER: Convert quiz answers from text to index (for loading)
   // SUPPORTS BOTH: Text (new) AND Index (old/legacy) formats!
   const convertQuizAnswersToIndices = (
@@ -546,7 +563,14 @@ export default function ModulePage() {
               console.log(`  Multi-select item ${i}: already index ${text}`)
               return text
             }
-            const index = question.options.findIndex(opt => opt.text === text)
+            // 🔧 Use fuzzy match to ignore emoji differences
+            const index = question.options.findIndex(opt => fuzzyTextMatch(opt.text, text))
+            if (index === -1) {
+              console.warn(`  ⚠️ Multi-select text ${i}: "${text}" not found! Trying exact match...`)
+              const exactIndex = question.options.findIndex(opt => opt.text === text)
+              console.log(`    Exact match result: ${exactIndex}`)
+              return exactIndex
+            }
             console.log(`  Multi-select text ${i}: "${text}" → index ${index}`)
             return index
           })
@@ -554,14 +578,22 @@ export default function ModulePage() {
         indexAnswers[qIndex] = indices
         console.log(`✅ Question ${qIndex} converted (multi):`, indices)
       } else if (typeof answer === 'string') {
-        // Single select: text → index
-        const index = question.options.findIndex(opt => opt.text === answer)
+        // Single select: text → index (with fuzzy match for emoji tolerance)
+        let index = question.options.findIndex(opt => fuzzyTextMatch(opt.text, answer))
+        
+        // Fallback to exact match if fuzzy fails
+        if (index === -1) {
+          console.log(`  ⚠️ Fuzzy match failed for "${answer}", trying exact match...`)
+          index = question.options.findIndex(opt => opt.text === answer)
+        }
+        
         console.log(`  Single-select: "${answer}" → index ${index}`)
         if (index !== -1) {
           indexAnswers[qIndex] = index
           console.log(`✅ Question ${qIndex} converted (single): ${index}`)
         } else {
           console.warn(`⚠️ Question ${qIndex}: Text "${answer}" not found in options!`)
+          console.warn(`  Available options:`, question.options.map((o, i) => `[${i}] ${o.text}`))
         }
       } else {
         console.warn(`⚠️ Question ${qIndex} has unexpected answer type:`, typeof answer)
@@ -631,14 +663,22 @@ export default function ModulePage() {
         return
       }
       
-      // NEW FORMAT: Convert text to index
+      // NEW FORMAT: Convert text to index (with fuzzy match for emoji tolerance)
       if (typeof answer === 'string') {
-        const index = item.controlQuestion.options.findIndex(opt => opt.text === answer)
+        let index = item.controlQuestion.options.findIndex(opt => fuzzyTextMatch(opt.text, answer))
+        
+        // Fallback to exact match if fuzzy fails
+        if (index === -1) {
+          console.log(`  ⚠️ Accordion ${itemId}: Fuzzy match failed for "${answer}", trying exact match...`)
+          index = item.controlQuestion.options.findIndex(opt => opt.text === answer)
+        }
+        
         if (index !== -1) {
           indexAnswers[itemId] = index
           console.log(`✅ Accordion ${itemId}: "${answer}" → index ${index}`)
         } else {
           console.warn(`⚠️ Accordion ${itemId}: Text "${answer}" not found!`)
+          console.warn(`  Available options:`, item.controlQuestion.options.map((o, i) => `[${i}] ${o.text}`))
         }
       }
     })
@@ -696,14 +736,22 @@ export default function ModulePage() {
         return
       }
       
-      // NEW FORMAT: Convert text to index
+      // NEW FORMAT: Convert text to index (with fuzzy match for emoji tolerance)
       if (typeof answer === 'string') {
-        const index = question.options.findIndex(opt => opt.text === answer)
+        let index = question.options.findIndex(opt => fuzzyTextMatch(opt.text, answer))
+        
+        // Fallback to exact match if fuzzy fails
+        if (index === -1) {
+          console.log(`  ⚠️ Terminology Q${qIndex}: Fuzzy match failed for "${answer}", trying exact match...`)
+          index = question.options.findIndex(opt => opt.text === answer)
+        }
+        
         if (index !== -1) {
           indexAnswers[qIndex] = index
           console.log(`✅ Terminology Q${qIndex}: "${answer}" → index ${index}`)
         } else {
           console.warn(`⚠️ Terminology Q${qIndex}: Text "${answer}" not found!`)
+          console.warn(`  Available options:`, question.options.map((o, i) => `[${i}] ${o.text}`))
         }
       }
     })
