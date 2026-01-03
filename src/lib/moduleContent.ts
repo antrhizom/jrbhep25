@@ -268,12 +268,12 @@ export const moduleData: Record<string, ModuleContent> = {
         preview: 'Wie viele Fotos sammeln sich auf unseren Geräten an?',
         content: {
           paragraphs: [
-            'Gemäss aktuellen Schätzungen speichern junge Erwachsene zwischen 18 und 24 Jahren zusammen rund 10 Milliarden Fotos auf ihren Smartphones. Im Durchschnitt liegen pro Nutzer etwa 2.100 bis 2.800 Bilder auf dem Gerät, wobei iOS-Nutzer mit ungefähr 2.400 Fotos etwas mehr sammeln als Android-Nutzer mit rund 1.900 Bildern.',
-            'Studien zeigen, dass rund 97% der Smartphone-Besitzer ihre Fotos zusätzlich in Cloud-Diensten sichern, diese Archive aber meist nur etwa einmal im Monat bewusst durchstöbern. Mehr als ein Drittel der jungen Erwachsenen fällt es schwer, Bilder zu löschen – aus Sorge, wertvolle Erinnerungen könnten verloren gehen.'
+            'Smartphones haben die Art und Weise verändert, wie wir Fotos speichern. Mit Speicherkapazitäten, die Tausende von Bildern auf jedem Gerät ermöglichen, sammeln sich im Durchschnitt mehrere Tausend Fotos pro Nutzer an.',
+            'Viele Menschen sichern ihre Bilder zusätzlich in Cloud-Diensten, schauen sich diese Archive jedoch nur selten an. Das Löschen fällt vielen schwer – aus Sorge, wertvolle Erinnerungen zu verlieren.'
           ],
           callout: {
             type: 'warning',
-            text: '⚠️ Umfragen deuten zudem darauf hin, dass ein grosser Teil der Amerikaner Fotos und Videos praktisch nie vom Gerät entfernt. Etwa jeder Achte gibt bis zu 5 Pfund pro Monat für zusätzlichen Speicherplatz aus, was sich hochgerechnet zu jährlichen Ausgaben im Bereich von mehreren hundert Millionen Pfund summiert.'
+            text: '⚠️ Diese Anhäufung führt dazu, dass manche für zusätzlichen Speicherplatz bezahlen, was sich zu beträchtlichen jährlichen Ausgaben summieren kann.'
           }
         },
         controlQuestion: {
