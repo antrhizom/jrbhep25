@@ -34,7 +34,25 @@ export default function ModulePage() {
   const [currentStep, setCurrentStep] = useState<'intro' | 'terminology' | 'interactive' | 'survey' | 'knowledge' | 'quiz'>('intro')
   const [surveyStepIndex, setSurveyStepIndex] = useState(0)  // Für jahresanalyse: 0-5 (Umfragen & Ergebnisse & Feedback)
   const [quizAnswers, setQuizAnswers] = useState<{ [key: number]: number[] | number | null }>({}) // Jetzt auch Array für Multi-Select
+  
+  // 🔍 DEBUG: Track when quizAnswers changes
+  useEffect(() => {
+    console.log('🔄 quizAnswers state changed:', {
+      count: Object.keys(quizAnswers).length,
+      data: quizAnswers,
+      stack: new Error().stack?.split('\n').slice(1, 4).join('\n')
+    })
+  }, [quizAnswers])
   const [accordionAnswers, setAccordionAnswers] = useState<{ [key: string]: number | null }>({}) // Accordion ID → gewählte Option
+  
+  // 🔍 DEBUG: Track when accordionAnswers changes  
+  useEffect(() => {
+    console.log('🔄 accordionAnswers state changed:', {
+      count: Object.keys(accordionAnswers).length,
+      data: accordionAnswers,
+      stack: new Error().stack?.split('\n').slice(1, 4).join('\n')
+    })
+  }, [accordionAnswers])
   const [showQuizResults, setShowQuizResults] = useState(false)
   const [score, setScore] = useState(0)
   const [loading, setLoading] = useState(true)
@@ -320,6 +338,18 @@ export default function ModulePage() {
       const quizAnswersText = convertQuizAnswersToText(answersToSave, shuffledQuestions)
       const accordionAnswersText = convertAccordionAnswersToText(accordionToSave, shuffledAccordionItems)
       const terminologyAnswersText = convertTerminologyAnswersToText(terminologyToSave, shuffledQuestions)
+
+      // 🚨 CRITICAL WARNING: Check if we're about to save empty objects
+      const quizCount = Object.keys(quizAnswersText).length
+      const accordionCount = Object.keys(accordionAnswersText).length
+      if (quizCount === 0 && accordionCount === 0 && module.id !== 'ausblick2026') {
+        console.error('🚨🚨🚨 WARNING: About to save EMPTY quiz and accordion answers!')
+        console.error('This will DELETE existing data! Stack trace:', new Error().stack)
+        console.error('answersToSave:', answersToSave)
+        console.error('accordionToSave:', accordionToSave)
+        console.error('shuffledQuestions:', shuffledQuestions)
+        console.error('shuffledAccordionItems:', shuffledAccordionItems)
+      }
 
       // 🧾 Survey status helper (so we don't just store 'iframe')
       const surveyState: { [key: number]: { type: string; answered: boolean } } = {}
