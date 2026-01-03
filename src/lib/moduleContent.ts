@@ -960,106 +960,74 @@ export const moduleData: Record<string, ModuleContent> = {
         }
       },
       {
-        id: 'neue-tools',
-        title: 'Neue KI-Tools für Kreative',
-        icon: '🎨',
-        preview: 'Von nano banana bis zu verbesserten Foto-Tools',
-        content: {
-          paragraphs: [
-            'Google Gemini führte 2025 "nano banana" ein – eine Funktion zur drastischen Verbesserung von Fotografien durch KI. Das Tool kann Belichtung, Schärfe und Komposition automatisch optimieren. Gleichzeitig revolutionieren Tools wie Midjourney, DALL-E und Stable Diffusion die Bildgenerierung.'
-          ],
-          callout: {
-            type: 'success',
-            text: '✨ Nano banana kann verwackelte oder unterbelichtete Fotos in professionell wirkende Aufnahmen verwandeln – oft besser als teure Profi-Software.'
-          }
-        },
-        controlQuestion: {
-          question: 'Was macht "nano banana" von Google Gemini?',
-          options: [
-            {
-              text: 'A) Generiert Bananen-Bilder',
-              isCorrect: false,
-              feedback: 'Nein, der Name ist irreführend – es geht nicht um Bananen!'
-            },
-            {
-              text: 'B) Verbessert Fotografien durch KI',
-              isCorrect: true,
-              feedback: '✅ Genau! Nano banana optimiert Fotos automatisch.'
-            },
-            {
-              text: 'C) Erstellt 3D-Modelle',
-              isCorrect: false,
-              feedback: 'Nein, es fokussiert auf 2D-Fotografie-Verbesserung.'
-            }
-          ]
-        }
-      },
       {
         id: 'seo-to-geo',
         title: 'Von SEO zu GEO',
         icon: '🔍',
-        preview: 'KI-Suchmaschinen verändern das Internet',
+        preview: 'KI verändert die Suchmaschinenoptimierung grundlegend',
         content: {
           paragraphs: [
-            'Der Wandel von SEO (Search Engine Optimization) zu GEO (Generative Engine Optimization) markiert 2025 einen Paradigmenwechsel. Während SEO darauf abzielte, in Suchmaschinen-Rankings zu erscheinen, geht es bei GEO darum, in KI-generierten Antworten zitiert zu werden. ChatGPT, Perplexity und Gemini liefern direkte Antworten statt Link-Listen.'
+            'Der Wandel von SEO (Search Engine Optimization) zu GEO (Generative Engine Optimization) markiert 2025 einen Paradigmenwechsel. Während SEO darauf abzielt, in Suchmaschinen-Rankings zu erscheinen, geht es bei GEO darum, in KI-generierten Antworten zitiert zu werden. ChatGPT, Perplexity und Gemini liefern direkte Antworten statt Link-Listen – sogenannte Zero-Click-Suchen.',
+            'Eine Studie zeigt: 80% der Quellen in Googles KI-Overviews sind in organischen Suchergebnissen nicht zu finden. Ein Top-3-Ranking bedeutet nur 8% Chance, als KI-Quelle genutzt zu werden. Content muss daher für KI-Modelle optimiert werden – mit strukturierten Daten, konversationellen Inhalten und direkten Antworten auf Nutzerfragen.'
           ],
           callout: {
             type: 'info',
-            text: '💡 Laut einer Gartner-Studie werden bis 2026 traditionelle Suchmaschinen-Zugriffe um 25% sinken, während KI-Chat-Anfragen um 400% steigen.'
+            text: '💡 SEO und GEO ergänzen sich: SEO sorgt für Sichtbarkeit in Suchmaschinen, GEO optimiert für KI-Modelle. Beide Strategien kombiniert bringen die beste Reichweite.'
           }
         },
         controlQuestion: {
-          question: 'Was bedeutet der Wandel von SEO zu GEO?',
+          question: 'Was ist der Hauptunterschied zwischen SEO und GEO?',
           options: [
             {
-              text: 'A) Geografische Optimierung von Websites',
-              isCorrect: false,
-              feedback: 'Nein, GEO steht nicht für Geografie in diesem Kontext.'
-            },
-            {
-              text: 'B) Optimierung für KI-generierte Antworten',
+              text: 'SEO für Suchmaschinen-Rankings, GEO für KI-generierte Antworten',
               isCorrect: true,
-              feedback: '✅ Richtig! GEO = Generative Engine Optimization.'
+              feedback: '✅ Richtig! GEO optimiert Content für KI-Modelle, nicht für Rankings.'
             },
             {
-              text: 'C) Optimierung für soziale Medien',
+              text: 'GEO ist geografische Website-Optimierung',
               isCorrect: false,
-              feedback: 'Nein, es geht speziell um KI-Suchmaschinen.'
+              feedback: 'Nein, GEO steht für Generative Engine Optimization.'
+            },
+            {
+              text: 'SEO und GEO sind identisch',
+              isCorrect: false,
+              feedback: 'Nein, sie haben unterschiedliche Ziele und Methoden.'
             }
           ]
         }
       },
       {
         id: 'google-gewinner',
-        title: 'Google als KI-Gewinnerin',
-        icon: '🏆',
-        preview: 'Warum Google 2025 im KI-Rennen vorne liegt',
+        title: 'Google Gemini 3: Year in Search-Highlights',
+        icon: '🔍',
+        preview: 'Googles KI-Chatbot führt die meistgesuchten Trends an',
         content: {
           paragraphs: [
-            'Trotz anfänglicher Ängste um die Dominanz von ChatGPT etablierte sich Google 2025 als klare Gewinnerin im KI-Wettlauf. Gemini wurde nahtlos in alle Google-Dienste integriert: Gmail, Docs, Sheets, YouTube, Maps. Mit Milliarden aktiven Nutzern weltweit hat Google eine uneinholbare Verbreitung erreicht.'
+            'Googles KI-Chatbot Gemini führte 2025 die „Year in Search"-Highlights an – noch vor Charlie Kirk und Papst Leo XIV. Seit September verzeichnete Google einen sprunghaften Anstieg bei Gemini-Suchen, als das Unternehmen KI-Updates für Chrome, Suche und Android vorstellte.',
+            'Auslöser war Gemini 3, die neueste Version mit Alphabets hauseigenen Chips. Lob kam von OpenAI-Chef Sam Altman und Nvidia. Salesforce-Chef Marc Benioff kündigte nach einem Test an, auf ChatGPT zu verzichten: „Der Sprung ist wahnsinnig – Schlussfolgern, Tempo, alles schärfer und schneller." Gemini 3 führt nun Benchmarks wie „Humanity\'s Last Exam" an und setzte OpenAI unter Druck.'
           ],
           callout: {
             type: 'success',
-            text: '🎯 Googles Vorteil: Zugang zu mehr Trainingsdaten als jedes andere Unternehmen – YouTube, Google Search, Android, Chrome kombiniert.'
+            text: '🏆 Gemini 3 benötigt weniger Prompting als frühere Modelle und kann „jede Idee zum Leben erwecken" mit modernstem Schlussfolgern und multimodalen Fähigkeiten.'
           }
         },
         controlQuestion: {
-          question: 'Warum gilt Google als Gewinnerin im KI-Kampf?',
+          question: 'Was machte Gemini 3 2025 besonders erfolgreich?',
           options: [
             {
-              text: 'A) Hat die meisten KI-Forscher',
-              isCorrect: false,
-              feedback: 'Das ist ein Faktor, aber nicht der Hauptgrund.'
-            },
-            {
-              text: 'B) Integration in 3 Milliarden aktive Nutzer-Dienste',
+              text: 'Integration in Google-Dienste und besseres Schlussfolgern',
               isCorrect: true,
-              feedback: '✅ Genau! Die nahtlose Integration in bestehende Dienste ist der Schlüssel.'
+              feedback: '✅ Richtig! Gemini 3 überzeugte durch Integration, Benchmarks und KI-Modus in der Suche.'
             },
             {
-              text: 'C) Hat das grösste KI-Modell',
+              text: 'Es ist das grösste KI-Modell',
               isCorrect: false,
-              feedback: 'Modellgrösse allein entscheidet nicht – Verbreitung ist wichtiger.'
+              feedback: 'Nein, die Grösse war nicht der Hauptgrund – Qualität und Integration zählen.'
+            },
+            {
+              text: 'Es ist kostenlos verfügbar',
+              isCorrect: false,
+              feedback: 'Das war nicht der entscheidende Erfolgsfaktor.'
             }
           ]
         }
