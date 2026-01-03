@@ -490,11 +490,15 @@ export default function ModulePage() {
     return textAnswers
   }
   
-  // 🔧 HELPER: Remove emojis from text for comparison
+  // 🔧 HELPER: Remove emojis from text for comparison (ES5 compatible)
   const removeEmojis = (text: string): string => {
-    // Remove all emojis and extra whitespace
+    // Remove emojis using surrogate pairs and common ranges (ES5 compatible)
     return text
-      .replace(/[\u{1F300}-\u{1F9FF}]|[\u{2600}-\u{26FF}]|[\u{2700}-\u{27BF}]/gu, '') // Remove emojis
+      .replace(/[\uD800-\uDBFF][\uDC00-\uDFFF]/g, '') // Remove emoji surrogate pairs
+      .replace(/[\u2600-\u27BF]/g, '') // Remove misc symbols & dingbats
+      .replace(/[\u2300-\u23FF]/g, '') // Remove misc technical
+      .replace(/[\u2B50-\u2B55]/g, '') // Remove stars
+      .replace(/[\uFE00-\uFE0F]/g, '') // Remove variation selectors
       .replace(/\s+/g, ' ') // Normalize whitespace
       .trim()
       .toLowerCase()
