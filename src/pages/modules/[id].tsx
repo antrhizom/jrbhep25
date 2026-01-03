@@ -279,71 +279,97 @@ export default function ModulePage() {
   }, [module]) // Only on mount/module change, intentionally not including autoSaveProgress
 
   // Auto-save progress function (wrapped in useCallback for stability)
-  const autoSaveProgress = useCallback(async () => {
-    console.log('🔵 autoSaveProgress called for', module?.id)
-    
+  const saveProgress = useCallback(async (params?: {
+    quizAnswers?: typeof quizAnswers
+    accordionAnswers?: typeof accordionAnswers
+    terminologyAnswers?: typeof terminologyAnswers
+    currentStep?: typeof currentStep
+  }) => {
+    console.log('💾 saveProgress called for', module?.id)
+
     if (!module) {
       console.log('❌ No module, skipping save')
       return
     }
-    
+
     const user = auth.currentUser
     if (!user) {
       console.log('❌ No user logged in, skipping save')
       return
     }
 
-    console.log('🔄 Attempting to save:', {
-      moduleId: module.id,
-      quizAnswers,
-      accordionAnswers,
-      terminologyAnswers
-    })
+    const answersToSave = params?.quizAnswers ?? quizAnswers
+    const accordionToSave = params?.accordionAnswers ?? accordionAnswers
+    const terminologyToSave = params?.terminologyAnswers ?? terminologyAnswers
+    const stepToSave = params?.currentStep ?? currentStep
 
     try {
       const userRef = doc(db, 'users', user.uid)
       const userDoc = await getDoc(userRef)
-      
-      if (userDoc.exists()) {
-        const userData = userDoc.data()
-        const modules = userData.modules || {}
-        
-        // 🔄 Convert answers from INDEX to TEXT for storage
-        const quizAnswersText = convertQuizAnswersToText(quizAnswers, shuffledQuestions)
-        const accordionAnswersText = convertAccordionAnswersToText(accordionAnswers, shuffledAccordionItems)
-        const terminologyAnswersText = convertTerminologyAnswersToText(terminologyAnswers, shuffledQuestions)
-        
-        console.log('🔄 Converted to text for storage:', {
-          quizAnswersText,
-          accordionAnswersText,
-          terminologyAnswersText
-        })
-        
-        // Save current state
-        modules[module.id] = {
-          ...modules[module.id],
-          quizAnswers: quizAnswersText,  // 📝 Store as TEXT not index
-          accordionAnswers: accordionAnswersText,  // 📝 Store as TEXT not index
-          terminologyAnswers: terminologyAnswersText,  // 📝 Store as TEXT not index
-          terminologyQuizCompleted: terminologyQuizCompleted,
-          currentStep: currentStep,
-          lastUpdated: new Date().toISOString()
-        }
-        
-        console.log('💾 Saving to Firebase:', modules[module.id])
-        
-        await updateDoc(userRef, {
-          modules
-        })
-        
-        console.log('✅ Progress saved successfully for', module.id)
-      } else {
+
+      if (!userDoc.exists()) {
         console.log('❌ User document does not exist')
+        return
       }
+
+      const userData = userDoc.data()
+      const modules = userData.modules || {}
+      const existingModule = modules[module.id] || {}
+
+      // 🔄 Convert answers from INDEX to TEXT for storage
+      const quizAnswersText = convertQuizAnswersToText(answersToSave, shuffledQuestions)
+      const accordionAnswersText = convertAccordionAnswersToText(accordionToSave, shuffledAccordionItems)
+      const terminologyAnswersText = convertTerminologyAnswersToText(terminologyToSave, shuffledQuestions)
+
+      // 🧾 Survey status helper (so we don't just store 'iframe')
+      const surveyState: { [key: number]: { type: string; answered: boolean } } = {}
+      shuffledQuestions.forEach((q, idx) => {
+        if (q.type === 'survey' || q.type === 'survey_results') {
+          surveyState[idx] = {
+            type: q.type,
+            answered: answersToSave[idx] !== undefined && answersToSave[idx] !== null
+          }
+        }
+      })
+
+      // Save current state - PRESERVE progress, score, completed
+      modules[module.id] = {
+        ...existingModule,
+        completed: existingModule.completed ?? false,
+        score: existingModule.score ?? 0,
+        progress: existingModule.progress ?? 1,
+        quizAnswers: quizAnswersText, // 📝 Store as TEXT not index
+        accordionAnswers: accordionAnswersText, // 📝 Store as TEXT not index
+        terminologyAnswers: terminologyAnswersText, // 📝 Store as TEXT not index
+        terminologyQuizCompleted,
+        currentStep: stepToSave,
+        surveyState,
+        lastUpdated: new Date().toISOString()
+      }
+
+      console.log('💾 Saving to Firebase:', modules[module.id])
+
+      await updateDoc(userRef, { modules })
+
+      console.log('✅ Progress saved successfully for', module.id)
     } catch (error) {
-      console.error('❌ Error auto-saving progress:', error)
+      console.error('❌ Error saving progress:', error)
     }
-  }, [module, quizAnswers, accordionAnswers, terminologyAnswers, terminologyQuizCompleted, currentStep, shuffledQuestions, shuffledAccordionItems])
+  }, [
+    module,
+    quizAnswers,
+    accordionAnswers,
+    terminologyAnswers,
+    terminologyQuizCompleted,
+    currentStep,
+    shuffledQuestions,
+    shuffledAccordionItems
+  ])
+
+  // Keep the existing name to minimize changes elsewhere
+  const autoSaveProgress = useCallback(async () => {
+    await saveProgress()
+  }, [saveProgress])
 
   // Auto-save whenever answers change (for ALL modules)
   useEffect(() => {
@@ -671,65 +697,11 @@ export default function ModulePage() {
     currentAccordionAnswers: typeof accordionAnswers,
     currentTerminologyAnswers: typeof terminologyAnswers
   ) => {
-    if (!module || !auth.currentUser) {
-      console.log('❌ Cannot save: no module or user')
-      return
-    }
-    
-    console.log('🚀 saveProgressDirectly called with:', {
+    await saveProgress({
       quizAnswers: currentQuizAnswers,
       accordionAnswers: currentAccordionAnswers,
       terminologyAnswers: currentTerminologyAnswers
     })
-    
-    try {
-      const userRef = doc(db, 'users', auth.currentUser.uid)
-      const userDoc = await getDoc(userRef)
-      
-      if (!userDoc.exists()) {
-        console.log('❌ User document does not exist')
-        return
-      }
-      
-      const userData = userDoc.data()
-      const modules = userData.modules || {}
-      
-      // Get existing module data
-      const existingModule = modules[module.id] || {}
-      
-      // 🔄 Convert answers from INDEX to TEXT for storage
-      const quizAnswersText = convertQuizAnswersToText(currentQuizAnswers, shuffledQuestions)
-      const accordionAnswersText = convertAccordionAnswersToText(currentAccordionAnswers, shuffledAccordionItems)
-      const terminologyAnswersText = convertTerminologyAnswersToText(currentTerminologyAnswers, shuffledQuestions)
-      
-      console.log('🔄 Converted to text for storage:', {
-        quizAnswersText,
-        accordionAnswersText,
-        terminologyAnswersText
-      })
-      
-      // Save current state - PRESERVE progress, score, completed
-      modules[module.id] = {
-        ...existingModule,  // Preserve ALL existing fields
-        completed: existingModule.completed ?? false,
-        score: existingModule.score ?? 0,
-        progress: existingModule.progress ?? 1,  // ⚠️ CRITICAL: Set progress so markModuleAsStarted doesn't reset!
-        quizAnswers: quizAnswersText,  // 📝 Store as TEXT not index
-        accordionAnswers: accordionAnswersText,  // 📝 Store as TEXT not index
-        terminologyAnswers: terminologyAnswersText,  // 📝 Store as TEXT not index
-        terminologyQuizCompleted: terminologyQuizCompleted,
-        currentStep: currentStep,
-        lastUpdated: new Date().toISOString()
-      }
-      
-      console.log('💾 Saving directly to Firebase (with all fields):', modules[module.id])
-      
-      await updateDoc(userRef, { modules })
-      
-      console.log('✅✅✅ DIRECT SAVE SUCCESSFUL for', module.id)
-    } catch (error) {
-      console.error('❌ Error in direct save:', error)
-    }
   }
   
   const handleSubmitQuiz = async () => {
