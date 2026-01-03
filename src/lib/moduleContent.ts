@@ -1682,22 +1682,22 @@ export const moduleData: Record<string, ModuleContent> = {
       },
       {
         type: 'knowledge',
-        question: 'Welche olympische Disziplin wird 2026 erstmals bei den Winterspielen eingeführt?',
+        question: 'Worum geht es bei der SRG-Initiative, über die am 8. März 2026 abgestimmt wird?',
         options: [
           {
-            text: 'Snowboard-Cross',
-            correct: false,
-            feedback: '❌ Falsch. Snowboard-Cross gibt es schon seit 2006.'
-          },
-          {
-            text: 'Ski-Bergsteigen',
+            text: 'Senkung der Serafe-Gebühren von 335 auf 200 CHF pro Jahr',
             correct: true,
-            feedback: '✅ Richtig! Bei Milano-Cortina wird Ski-Bergsteigen erstmals olympisch.'
+            feedback: '✅ Richtig! Die Initiative will die Radio- und TV-Gebühren deutlich senken.'
           },
           {
-            text: 'Eiskunstlauf Paare',
+            text: 'Komplette Abschaffung der SRG',
             correct: false,
-            feedback: '❌ Falsch. Eiskunstlauf gibt es seit den ersten Winterspielen.'
+            feedback: '❌ Falsch. Es geht um die Senkung der Gebühren, nicht um Abschaffung.'
+          },
+          {
+            text: 'Erhöhung der Serafe-Gebühren',
+            correct: false,
+            feedback: '❌ Falsch. Die Initiative will die Gebühren senken, nicht erhöhen.'
           }
         ]
       },
