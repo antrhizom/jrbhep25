@@ -169,22 +169,22 @@ export const moduleData: Record<string, ModuleContent> = {
           }
         },
         controlQuestion: {
-          question: 'Wie viele Fotos werden 2025 weltweit pro Tag aufgenommen?',
+          question: 'Wie viele Fotos werden schätzungsweise 2025 weltweit pro Tag aufgenommen?',
           options: [
             {
-              text: 'A) 500 Millionen',
+              text: 'Ca. 500 Millionen',
               isCorrect: false,
-              feedback: 'Das ist viel zu niedrig. Die weltweite Foto-Produktion ist massiv gestiegen.'
+              feedback: 'Diese Schätzung ist zu niedrig. Die weltweite Foto-Produktion ist massiv gestiegen.'
             },
             {
-              text: 'B) 5.3 Milliarden',
+              text: 'Ca. 5.3 Milliarden',
               isCorrect: true,
-              feedback: '✅ Richtig! 5.3 Milliarden Fotos werden täglich weltweit aufgenommen.'
+              feedback: '✅ Richtig! Schätzungsweise 5.3 Milliarden Fotos werden täglich weltweit aufgenommen.'
             },
             {
-              text: 'C) 50 Milliarden',
+              text: 'Ca. 50 Milliarden',
               isCorrect: false,
-              feedback: 'Das wäre über 6 Fotos pro Sekunde pro Person weltweit – zu hoch!'
+              feedback: 'Diese Schätzung wäre über 6 Fotos pro Sekunde pro Person weltweit – zu hoch!'
             }
           ]
         }
@@ -205,22 +205,22 @@ export const moduleData: Record<string, ModuleContent> = {
           }
         },
         controlQuestion: {
-          question: 'Welcher Prozentsatz aller Fotos wird 2025 mit Smartphones gemacht?',
+          question: 'Welcher Prozentsatz aller Fotos wird schätzungsweise 2025 mit Smartphones gemacht?',
           options: [
             {
-              text: 'A) 50%',
+              text: 'Ca. 50%',
               isCorrect: false,
-              feedback: 'Smartphones sind noch dominanter! Die meisten Menschen haben ihre Kamera immer dabei.'
+              feedback: 'Diese Schätzung ist zu niedrig. Smartphones sind noch dominanter – die meisten Menschen haben ihre Kamera immer dabei.'
             },
             {
-              text: 'B) 75%',
+              text: 'Ca. 75%',
               isCorrect: false,
-              feedback: 'Fast richtig, aber Smartphones haben einen noch grösseren Anteil.'
+              feedback: 'Fast richtig, aber Schätzungen gehen davon aus, dass Smartphones einen noch grösseren Anteil haben.'
             },
             {
-              text: 'C) 92-95%',
+              text: 'Ca. 92-95%',
               isCorrect: true,
-              feedback: '✅ Korrekt! Über 92% aller Fotos entstehen mit dem Smartphone.'
+              feedback: '✅ Korrekt! Schätzungen zufolge entstehen über 92% aller Fotos mit dem Smartphone.'
             }
           ]
         }
@@ -241,22 +241,22 @@ export const moduleData: Record<string, ModuleContent> = {
           }
         },
         controlQuestion: {
-          question: 'Wie viel Prozent der Social Media Bilder sind KI-generiert oder KI-erweitert?',
+          question: 'Wie viel Prozent der Social Media Bilder sind gemäss Schätzungen KI-generiert oder KI-erweitert?',
           options: [
             {
-              text: 'A) 25%',
+              text: 'Ca. 25%',
               isCorrect: false,
-              feedback: 'KI ist viel verbreiteter! Die Mehrheit der Bilder wird durch KI beeinflusst.'
+              feedback: 'Laut aktuellen Schätzungen ist KI viel verbreiteter! Die Mehrheit der Bilder wird durch KI beeinflusst.'
             },
             {
-              text: 'B) 50%',
+              text: 'Ca. 50%',
               isCorrect: false,
-              feedback: 'Es sind noch mehr! KI-Generierung ist heute Standard in Social Media.'
+              feedback: 'Schätzungen gehen von noch mehr aus! KI-Generierung ist heute Standard in Social Media.'
             },
             {
-              text: 'C) 71%',
+              text: 'Ca. 71%',
               isCorrect: true,
-              feedback: '✅ Genau! 71% aller Social Media Bilder sind KI-generiert oder KI-erweitert.'
+              feedback: '✅ Richtig! Gemäss Schätzungen sind etwa 71% aller Social Media Bilder KI-generiert oder KI-erweitert.'
             }
           ]
         }
@@ -277,22 +277,22 @@ export const moduleData: Record<string, ModuleContent> = {
           }
         },
         controlQuestion: {
-          question: 'Wie viele Fotos hat der durchschnittliche Smartphone-Nutzer gespeichert?',
+          question: 'Wie viele Fotos hat gemäss Schätzungen der durchschnittliche Smartphone-Nutzer gespeichert?',
           options: [
             {
-              text: 'A) 500-800 Fotos',
+              text: 'Ca. 500-800 Fotos',
               isCorrect: false,
-              feedback: 'Es sind deutlich mehr! Wir sammeln viel mehr Fotos an, als uns bewusst ist.'
+              feedback: 'Diese Schätzung ist zu niedrig! Wir sammeln viel mehr Fotos an, als uns bewusst ist.'
             },
             {
-              text: 'B) 2.100-2.800 Fotos',
+              text: 'Ca. 2.100-2.800 Fotos',
               isCorrect: true,
-              feedback: '✅ Korrekt! Der Durchschnitt liegt bei 2.100-2.800 Fotos pro Smartphone.'
+              feedback: '✅ Richtig! Schätzungen zufolge liegt der Durchschnitt bei 2.100-2.800 Fotos pro Smartphone.'
             },
             {
-              text: 'C) 10.000 Fotos',
+              text: 'Ca. 10.000 Fotos',
               isCorrect: false,
-              feedback: 'Das wäre extrem viel – der Durchschnitt ist niedriger, aber immer noch beeindruckend.'
+              feedback: 'Das wäre extrem viel – gemäss Schätzungen ist der Durchschnitt niedriger, aber immer noch beeindruckend.'
             }
           ]
         }
