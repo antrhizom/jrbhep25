@@ -493,14 +493,14 @@ export const moduleData: Record<string, ModuleContent> = {
         preview: 'Weltweit erste umfassende KI-Regulierung',
         content: {
           paragraphs: [
-            'Der EU Artificial Intelligence Act (EU AI Act) trat 2025 offiziell in Kraft. Es ist die weltweit erste umfassende Gesetzgebung zur Regulierung künstlicher Intelligenz.',
-            'Das Gesetz kategorisiert KI-Systeme nach Risikostufen: Verbotene Systeme (z.B. Social Scoring), Hochrisiko-Systeme (z.B. biometrische Identifikation), und Systeme mit geringem Risiko. Verstösse können Strafen bis zu 35 Millionen Euro oder 7% des weltweiten Jahresumsatzes nach sich ziehen.'
+            'Am 12. Juli 2024 wurde die EU-Verordnung zur Regulierung künstlicher Intelligenz im Amtsblatt veröffentlicht. Der «AI Act» ist das erste umfassende KI-Gesetz weltweit und hat auch Folgen für Drittländer wie die Schweiz.',
+            'Das Gesetz kategorisiert KI-Systeme nach Risikostufen: Bestimmte Anwendungen wie Social Scoring sind verboten. Für Hochrisiko-KI-Systeme gelten besondere Transparenzanforderungen und Registrierung in einer EU-Datenbank. Bei Verstössen drohen Geldbussen bis zu 35 Millionen Euro oder 7% des Jahresumsatzes.'
           ],
           keyPoints: [
-            'Inkrafttreten: Gestaffelt ab Februar 2025',
-            'Strafen: Bis 35 Mio. € oder 7% des Jahresumsatzes',
-            'Verbotene KI: Social Scoring, manipulative Techniken',
-            'Hochrisiko-KI: Strenge Anforderungen an Dokumentation und Transparenz'
+            'Inkrafttreten: Ab 2. Februar 2025 (allgemeine Bestimmungen)',
+            'Vollständige Anwendung: 2. August 2026',
+            'Schweizer Unternehmen betroffen: Bei KI-Systemen für EU-Markt',
+            'Strafen: Bis 35 Mio. € oder 7% des Jahresumsatzes'
           ]
         },
         controlQuestion: {
@@ -564,76 +564,76 @@ export const moduleData: Record<string, ModuleContent> = {
       },
       {
         id: 'ki-durchbruch',
-        title: 'GPT-5 und Gemini Ultra setzen neue Massstäbe',
+        title: 'Google Gemini mit nano banana und veo 3',
         icon: '🤖',
-        preview: 'KI-Modelle erreichen neue Leistungsniveaus',
+        preview: 'KI-Funktionen revolutionieren Fotografie und Video',
         content: {
           paragraphs: [
-            'OpenAI veröffentlichte im März 2025 GPT-5, das laut Benchmarks erstmals menschliche Leistung bei komplexen Aufgaben wie Programmierung und wissenschaftlichem Schreiben übertrifft. Google konterte mit Gemini Ultra.',
-            'Beide Modelle zeigen dramatische Verbesserungen bei multimodalen Fähigkeiten: Sie verstehen gleichzeitig Text, Bilder, Audio und Video. Die Fehlerrate bei mathematischen Aufgaben sank auf unter 2%, bei Programmiertests erreichen sie über 90% Erfolgsquote.'
+            'Google Gemini führte 2025 «nano banana» ein – eine KI-Funktion zur drastischen Verbesserung von Fotografien. Das Tool optimiert Belichtung, Schärfe und Komposition automatisch und markiert einen Durchbruch in der computational photography.',
+            'Gleichzeitig präsentierte Google «veo 3», ein fortschrittliches KI-System zur Videogenerierung und -bearbeitung. Zusammen mit Tools wie Midjourney, DALL-E und Stable Diffusion revolutionieren diese KI-Systeme die visuelle Content-Erstellung.'
           ],
           keyPoints: [
-            'GPT-5 Release: Anfang 2025',
-            'Gemini Ultra: Mitte 2025',
-            'Multimodalität: Text, Bild, Audio, Video gleichzeitig',
-            'Durchbruch bei Code-Generierung und wissenschaftlichem Reasoning'
+            'nano banana: Automatische Foto-Optimierung',
+            'veo 3: KI-gestützte Videogenerierung',
+            'Integration in Google-Ökosystem',
+            'Durchbruch bei visueller KI'
           ]
         },
         controlQuestion: {
-          question: 'Welche Erfolgsquote erreichen die neuen KI-Modelle bei Programmiertests?',
+          question: 'Was macht «nano banana» von Google Gemini?',
           options: [
             {
-              text: 'Über 60%',
+              text: 'Generiert Videos aus Text',
               isCorrect: false,
-              feedback: 'Nicht korrekt. Die Erfolgsquote ist deutlich höher.'
+              feedback: 'Nicht korrekt. Das ist die Funktion von veo 3.'
             },
             {
-              text: 'Über 90%',
+              text: 'Optimiert Fotos automatisch',
               isCorrect: true,
-              feedback: '✅ Richtig! Die KI-Modelle erreichen bei Programmiertests über 90% Erfolgsquote.'
+              feedback: '✅ Richtig! nano banana verbessert Belichtung, Schärfe und Komposition von Fotos.'
             },
             {
-              text: 'Etwa 50%',
+              text: 'Übersetzt Texte',
               isCorrect: false,
-              feedback: 'Nicht korrekt. Die Modelle schneiden viel besser ab.'
+              feedback: 'Nicht korrekt. Das ist eine allgemeine Gemini-Funktion, nicht nano banana.'
             }
           ]
         }
       },
       {
-        id: 'wm-vorbereitung',
-        title: 'FIFA WM 2026: Vorbereitungen in USA, Kanada und Mexiko',
-        icon: '⚽',
-        preview: 'Erste WM mit 48 Teams',
+        id: 'schweizer-abstimmungen',
+        title: 'Wichtige Schweizer Abstimmungen 2025',
+        icon: '🗳️',
+        preview: 'E-ID und Liegenschaftssteuer im Fokus',
         content: {
           paragraphs: [
-            'Die Vorbereitungen für die FIFA Fussball-Weltmeisterschaft 2026 liefen 2025 auf Hochtouren. Es wird die erste WM mit 48 teilnehmenden Teams sein (bisher 32) und findet in drei Ländern statt: USA, Kanada und Mexiko.',
-            'Neue Stadien in Nordamerika wurden fertiggestellt, darunter das SoFi Stadium in Los Angeles und das MetLife Stadium in New York/New Jersey. Die Qualifikationsspiele starteten im September 2025 mit neuen Formaten für alle Konföderationen.'
+            'Das Jahr 2025 brachte wichtige Volksentscheide in der Schweiz. Die elektronische Identität (E-ID) stand erneut zur Debatte, nachdem ein früherer Vorschlag 2021 abgelehnt worden war. Der neue Ansatz legt mehr Wert auf Datenschutz und staatliche Kontrolle.',
+            'Parallel dazu wurde über steuerliche Fragen abgestimmt, darunter Anpassungen bei der Liegenschaftssteuer. Diese Abstimmungen zeigen das direkt-demokratische Engagement der Schweizer Bevölkerung bei digitalen und fiskalischen Themen.'
           ],
           keyPoints: [
-            'Zeitraum: 11. Juni bis 19. Juli 2026',
-            'Teilnehmer: 48 Teams (Premiere)',
-            'Spiele: 104 (bisher 64)',
-            'Gastgeber: 16 Städte in USA, Kanada, Mexiko'
+            'E-ID: Neuer Vorschlag mit mehr Datenschutz',
+            'Staatliche Kontrolle statt Private',
+            'Liegenschaftssteuer: Anpassungen diskutiert',
+            'Direkte Demokratie in Aktion'
           ]
         },
         controlQuestion: {
-          question: 'Wie viele Teams nehmen erstmals an der FIFA WM 2026 teil?',
+          question: 'Worum ging es bei der E-ID-Abstimmung in der Schweiz?',
           options: [
             {
-              text: '32 Teams (wie bisher)',
+              text: 'Eine elektronische Steuererklärung',
               isCorrect: false,
-              feedback: 'Nicht korrekt. Die Anzahl der Teams wurde erhöht.'
+              feedback: 'Nicht korrekt. E-ID steht für elektronische Identität.'
             },
             {
-              text: '48 Teams',
+              text: 'Eine elektronische Identität mit staatlicher Kontrolle',
               isCorrect: true,
-              feedback: '✅ Richtig! Erstmals nehmen 48 Teams an einer WM teil (bisher 32).'
+              feedback: '✅ Richtig! Die E-ID ist eine digitale Identitätslösung mit staatlicher Aufsicht.'
             },
             {
-              text: '64 Teams',
+              text: 'Ein neues Wahlsystem',
               isCorrect: false,
-              feedback: 'Nicht korrekt. So viele Teams nehmen nicht teil.'
+              feedback: 'Nicht korrekt. E-ID bezieht sich auf digitale Identifikation.'
             }
           ]
         }
@@ -679,14 +679,6 @@ export const moduleData: Record<string, ModuleContent> = {
         author: 'Nature',
         date: '2025',
         url: 'https://www.nature.com/articles/ai'
-      },
-      {
-        id: 'fifa-wm',
-        title: 'FIFA World Cup 2026 Preparations',
-        type: 'article',
-        author: 'FIFA',
-        date: '2025',
-        url: 'https://www.fifa.com'
       }
     ],
     quizQuestions: [
@@ -1486,10 +1478,9 @@ export const moduleData: Record<string, ModuleContent> = {
         preview: 'Sportliche und kulturelle Highlights weltweit und in der Schweiz',
         content: {
           paragraphs: [
-            '2026 verspricht ein spektakuläres Jahr für Sport- und Kulturbegeisterte zu werden. Von der FIFA WM über Olympische Winterspiele bis zu legendären Festivals – für jeden ist etwas dabei.'
+            '2026 verspricht ein spektakuläres Jahr für Sport- und Kulturbegeisterte zu werden. Von Olympischen Winterspielen über die Eishockey-WM in der Schweiz bis zu legendären Festivals – für jeden ist etwas dabei.'
           ],
           keyPoints: [
-            'FIFA Fussball-WM 2026: 11. Juni - 19. Juli (USA/Mexiko/Kanada) – Erstmals mit 48 Teams',
             'Olympische Winterspiele Milano-Cortina: 6.-22. Februar – Ski-Bergsteigen wird olympisch',
             'IIHF Eishockey-WM: 15.-31. Mai (Zürich & Fribourg) – Schweiz gegen Deutschland am 18. Mai',
             'Open Air St. Gallen: 25.-28. Juni mit Twenty One Pilots',
@@ -1499,8 +1490,8 @@ export const moduleData: Record<string, ModuleContent> = {
           ],
           examples: [
             {
-              title: 'FIFA WM 2026: Ein neues Format',
-              description: 'Die WM 2026 ist die erste mit 48 Teams und findet erstmals in drei Ländern statt. 104 Spiele werden in 16 Städten ausgetragen – das Finale steigt am 19. Juli im MetLife Stadium (New Jersey).',
+              title: 'Olympische Winterspiele 2026',
+              description: 'Die Olympischen Winterspiele 2026 finden in Milano-Cortina (Italien) statt. Erstmals wird Ski-Bergsteigen olympische Disziplin. Die Schweizer Delegation hofft auf zahlreiche Medaillen.',
               type: 'info'
             },
             {
@@ -1511,7 +1502,7 @@ export const moduleData: Record<string, ModuleContent> = {
           ],
           callout: {
             type: 'success',
-            text: '🏆 2026 ist das Jahr der Mega-Events – von der FIFA WM bis zur Eishockey-WM in der Schweiz.'
+            text: '🏆 2026 ist das Jahr der Mega-Events – von Olympia bis zur Eishockey-WM in der Schweiz.'
           }
         }
       }
