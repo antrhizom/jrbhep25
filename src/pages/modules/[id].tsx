@@ -98,8 +98,8 @@ export default function ModulePage() {
       }
       
       // Shuffle quiz questions and their options
-      if (moduleId === 'jahresanalyse') {
-        // Für jahresanalyse: Keine Fragen mischen, nur Optionen
+      if (moduleId === 'jahresanalyse' || moduleId === 'fotos2025') {
+        // Für jahresanalyse & fotos2025: Keine Fragen mischen, nur Optionen
         const shuffled = moduleContent.quizQuestions.map(q => ({
           ...q,
           options: q.type === 'survey' || q.type === 'survey_results' 
