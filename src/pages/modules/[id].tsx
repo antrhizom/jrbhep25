@@ -587,13 +587,35 @@ export default function ModulePage() {
           index = question.options.findIndex(opt => opt.text === answer)
         }
         
-        console.log(`  Single-select: "${answer}" → index ${index}`)
-        if (index !== -1) {
+        // 🆘 FALLBACK: If still not found, search in ALL questions (maybe indices changed)
+        if (index === -1) {
+          console.warn(`  🔍 Answer not found at expected index ${qIndex}, searching all questions...`)
+          
+          // Search through all questions for a match
+          for (let searchIdx = 0; searchIdx < questions.length; searchIdx++) {
+            if (searchIdx === qIndex) continue // Skip current (already tried)
+            
+            const searchQuestion = questions[searchIdx]
+            const foundIndex = searchQuestion.options.findIndex(opt => 
+              fuzzyTextMatch(opt.text, answer) || opt.text === answer
+            )
+            
+            if (foundIndex !== -1) {
+              console.log(`  ✅ Found answer at different question index ${searchIdx} (was saved as ${qIndex})`)
+              console.log(`     Moving answer from index ${qIndex} → ${searchIdx}`)
+              indexAnswers[searchIdx] = foundIndex
+              return // Successfully remapped!
+            }
+          }
+          
+          // Still not found anywhere
+          console.warn(`⚠️ Question ${qIndex}: Text "${answer}" not found in ANY question!`)
+          console.warn(`  Original question: "${question.question.substring(0, 80)}..."`)
+          console.warn(`  Available options:`, question.options.map((o, i) => `[${i}] ${o.text.substring(0, 60)}`))
+        } else {
+          // Found at expected index
           indexAnswers[qIndex] = index
           console.log(`✅ Question ${qIndex} converted (single): ${index}`)
-        } else {
-          console.warn(`⚠️ Question ${qIndex}: Text "${answer}" not found in options!`)
-          console.warn(`  Available options:`, question.options.map((o, i) => `[${i}] ${o.text}`))
         }
       } else {
         console.warn(`⚠️ Question ${qIndex} has unexpected answer type:`, typeof answer)
