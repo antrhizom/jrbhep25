@@ -402,12 +402,26 @@ export default function ModulePage() {
     answers: typeof quizAnswers,
     questions: QuizQuestion[]
   ): { [key: number]: string | string[] } => {
+    console.log('🔄 convertQuizAnswersToText called with:', {
+      answersCount: Object.keys(answers).length,
+      questionsCount: questions.length,
+      answers,
+      questionTitles: questions.map((q, i) => `${i}: ${q.question.substring(0, 30)}...`)
+    })
+    
     const textAnswers: { [key: number]: string | string[] } = {}
     
     Object.keys(answers).forEach(qIndexStr => {
       const qIndex = parseInt(qIndexStr)
       const answer = answers[qIndex]
       const question = questions[qIndex]
+      
+      console.log(`🔍 Processing answer ${qIndex}:`, {
+        answer,
+        hasQuestion: !!question,
+        questionTitle: question?.question.substring(0, 40),
+        optionsCount: question?.options?.length
+      })
       
       if (!question) {
         console.warn(`⚠️ Question ${qIndex} not found in questions array!`)
@@ -416,15 +430,23 @@ export default function ModulePage() {
       
       if (Array.isArray(answer)) {
         // Multi-select: array of indices → array of texts
-        textAnswers[qIndex] = answer.map(optIndex => 
-          question.options[optIndex]?.text || ''
-        ).filter(text => text !== '')
+        const texts = answer.map(optIndex => {
+          const text = question.options[optIndex]?.text || ''
+          console.log(`  Multi-select option ${optIndex} → "${text}"`)
+          return text
+        }).filter(text => text !== '')
+        textAnswers[qIndex] = texts
+        console.log(`  ✅ Stored multi-select:`, texts)
       } else if (typeof answer === 'number') {
         // Single select: index → text
-        textAnswers[qIndex] = question.options[answer]?.text || ''
+        const text = question.options[answer]?.text || ''
+        console.log(`  Single-select option ${answer} → "${text}"`)
+        textAnswers[qIndex] = text
+        console.log(`  ✅ Stored single-select: "${text}"`)
       }
     })
     
+    console.log('🎯 Final textAnswers:', textAnswers)
     return textAnswers
   }
   
@@ -515,17 +537,36 @@ export default function ModulePage() {
     answers: typeof accordionAnswers,
     items: AccordionItem[]
   ): { [key: string]: string } => {
+    console.log('🔄 convertAccordionAnswersToText called with:', {
+      answersCount: Object.keys(answers).length,
+      itemsCount: items.length,
+      answers,
+      itemIds: items.map(i => i.id)
+    })
+    
     const textAnswers: { [key: string]: string } = {}
     
     Object.keys(answers).forEach(itemId => {
       const optIndex = answers[itemId]
       const item = items.find(i => i.id === itemId)
       
+      console.log(`🔍 Processing accordion ${itemId}:`, {
+        optIndex,
+        hasItem: !!item,
+        hasControlQuestion: !!item?.controlQuestion,
+        optionsCount: item?.controlQuestion?.options?.length
+      })
+      
       if (item?.controlQuestion && typeof optIndex === 'number') {
-        textAnswers[itemId] = item.controlQuestion.options[optIndex]?.text || ''
+        const text = item.controlQuestion.options[optIndex]?.text || ''
+        textAnswers[itemId] = text
+        console.log(`  ✅ Stored: "${text}"`)
+      } else {
+        console.log(`  ⚠️ Skipped - no item or controlQuestion or invalid optIndex`)
       }
     })
     
+    console.log('🎯 Final accordionTextAnswers:', textAnswers)
     return textAnswers
   }
   
