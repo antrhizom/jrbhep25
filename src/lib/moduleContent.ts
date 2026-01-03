@@ -160,8 +160,8 @@ export const moduleData: Record<string, ModuleContent> = {
         preview: 'Eine beeindruckende Zahl zur weltweiten Fotografie',
         content: {
           paragraphs: [
-            'Im Jahr 2025 werden weltweit schätzungsweise 2 Billionen digitale Fotos aufgenommen. Das entspricht etwa 61\'000 Fotos pro Sekunde – oder 5.3 Milliarden Fotos pro Tag.',
-            'Die USA führen mit durchschnittlich 20 Bildern pro Tag pro Person, während Europäer mit etwa 5 Bildern pro Tag etwas zurückhaltender sind.'
+            'Gemäss Schätzungen werden im Jahr 2025 weltweit etwa 2 Billionen digitale Fotos aufgenommen. Das entspricht schätzungsweise etwa 61\'000 Fotos pro Sekunde – oder etwa 5.3 Milliarden Fotos pro Tag.',
+            'Schätzungen zufolge führen die USA mit durchschnittlich 20 Bildern pro Tag pro Person, während Europäer mit etwa 5 Bildern pro Tag etwas zurückhaltender sind.'
           ],
           callout: {
             type: 'info',
@@ -169,22 +169,22 @@ export const moduleData: Record<string, ModuleContent> = {
           }
         },
         controlQuestion: {
-          question: 'Wie viele Fotos werden schätzungsweise 2025 weltweit pro Tag aufgenommen?',
+          question: 'Wie viele Fotos werden 2025 weltweit pro Tag aufgenommen?',
           options: [
             {
-              text: 'Ca. 500 Millionen',
+              text: '500 Millionen',
               isCorrect: false,
-              feedback: 'Diese Schätzung ist zu niedrig. Die weltweite Foto-Produktion ist massiv gestiegen.'
+              feedback: 'Das ist viel zu niedrig. Die weltweite Foto-Produktion ist massiv gestiegen.'
             },
             {
-              text: 'Ca. 5.3 Milliarden',
+              text: '5.3 Milliarden',
               isCorrect: true,
-              feedback: '✅ Richtig! Schätzungsweise 5.3 Milliarden Fotos werden täglich weltweit aufgenommen.'
+              feedback: '✅ Richtig! 5.3 Milliarden Fotos werden täglich weltweit aufgenommen.'
             },
             {
-              text: 'Ca. 50 Milliarden',
+              text: '50 Milliarden',
               isCorrect: false,
-              feedback: 'Diese Schätzung wäre über 6 Fotos pro Sekunde pro Person weltweit – zu hoch!'
+              feedback: 'Das wäre über 6 Fotos pro Sekunde pro Person weltweit – zu hoch!'
             }
           ]
         }
@@ -196,8 +196,8 @@ export const moduleData: Record<string, ModuleContent> = {
         preview: 'Wie dominant sind Smartphones in der Fotografie?',
         content: {
           paragraphs: [
-            'Über 92-95% aller Fotos weltweit werden heute mit Smartphones aufgenommen. Dedizierte Kameras machen nur noch etwa 3-5% aller Aufnahmen aus – ein dramatischer Wandel im Vergleich zu vor 15 Jahren.',
-            'Nur etwa 40-80 Milliarden Fotos jährlich werden mit echten digitalen Kameras gemacht, während der Grossteil mit Smartphones entsteht.'
+            'Gemäss aktuellen Schätzungen werden über 92-95% aller Fotos weltweit heute mit Smartphones aufgenommen. Dedizierte Kameras machen nur noch etwa 3-5% aller Aufnahmen aus – ein dramatischer Wandel im Vergleich zu vor 15 Jahren.',
+            'Schätzungen zufolge werden nur etwa 40-80 Milliarden Fotos jährlich mit echten digitalen Kameras gemacht, während der Grossteil mit Smartphones entsteht.'
           ],
           callout: {
             type: 'success',
@@ -205,22 +205,22 @@ export const moduleData: Record<string, ModuleContent> = {
           }
         },
         controlQuestion: {
-          question: 'Welcher Prozentsatz aller Fotos wird schätzungsweise 2025 mit Smartphones gemacht?',
+          question: 'Welcher Prozentsatz aller Fotos wird 2025 mit Smartphones gemacht?',
           options: [
             {
-              text: 'Ca. 50%',
+              text: '50%',
               isCorrect: false,
-              feedback: 'Diese Schätzung ist zu niedrig. Smartphones sind noch dominanter – die meisten Menschen haben ihre Kamera immer dabei.'
+              feedback: 'Smartphones sind noch dominanter! Die meisten Menschen haben ihre Kamera immer dabei.'
             },
             {
-              text: 'Ca. 75%',
+              text: '75%',
               isCorrect: false,
-              feedback: 'Fast richtig, aber Schätzungen gehen davon aus, dass Smartphones einen noch grösseren Anteil haben.'
+              feedback: 'Fast richtig, aber Smartphones haben einen noch grösseren Anteil.'
             },
             {
-              text: 'Ca. 92-95%',
+              text: '92-95%',
               isCorrect: true,
-              feedback: '✅ Korrekt! Schätzungen zufolge entstehen über 92% aller Fotos mit dem Smartphone.'
+              feedback: '✅ Korrekt! Über 92% aller Fotos entstehen mit dem Smartphone.'
             }
           ]
         }
@@ -232,31 +232,31 @@ export const moduleData: Record<string, ModuleContent> = {
         preview: 'Wie verbreitet ist KI in der Social Media Fotografie?',
         content: {
           paragraphs: [
-            '71% aller Social Media Bilder sind mittlerweile KI-generiert oder KI-erweitert. Dies umfasst sowohl vollständig von KI erstellte Bilder als auch Fotos, die durch KI stark verändert wurden.',
-            'Über 80% aller Social Media Inhalte werden durch KI-Algorithmen empfohlen, was die Nutzerbindung erheblich verbessert. Die KI-gesteuerte Social Media-Industrie soll bis 2031 auf 12 Milliarden Dollar wachsen.'
+            'Gemäss Schätzungen sind etwa 71% aller Social Media Bilder mittlerweile KI-generiert oder KI-erweitert. Dies umfasst sowohl vollständig von KI erstellte Bilder als auch Fotos, die durch KI stark verändert wurden.',
+            'Schätzungen zufolge werden über 80% aller Social Media Inhalte durch KI-Algorithmen empfohlen, was die Nutzerbindung erheblich verbessert. Die KI-gesteuerte Social Media-Industrie soll bis 2031 auf 12 Milliarden Dollar wachsen.'
           ],
           callout: {
             type: 'warning',
-            text: '⚠️ Ethische Frage: 62% der Marketer glauben, dass eine Kennzeichnungspflicht für KI-generierte Inhalte positive Effekte auf Social Media hätte.'
+            text: '⚠️ Ethische Frage: Gemäss Umfragen glauben etwa 62% der Marketer, dass eine Kennzeichnungspflicht für KI-generierte Inhalte positive Effekte auf Social Media hätte.'
           }
         },
         controlQuestion: {
-          question: 'Wie viel Prozent der Social Media Bilder sind gemäss Schätzungen KI-generiert oder KI-erweitert?',
+          question: 'Wie viel Prozent der Social Media Bilder sind KI-generiert oder KI-erweitert?',
           options: [
             {
-              text: 'Ca. 25%',
+              text: '25%',
               isCorrect: false,
-              feedback: 'Laut aktuellen Schätzungen ist KI viel verbreiteter! Die Mehrheit der Bilder wird durch KI beeinflusst.'
+              feedback: 'KI ist viel verbreiteter! Die Mehrheit der Bilder wird durch KI beeinflusst.'
             },
             {
-              text: 'Ca. 50%',
+              text: '50%',
               isCorrect: false,
-              feedback: 'Schätzungen gehen von noch mehr aus! KI-Generierung ist heute Standard in Social Media.'
+              feedback: 'Es sind noch mehr! KI-Generierung ist heute Standard in Social Media.'
             },
             {
-              text: 'Ca. 71%',
+              text: '71%',
               isCorrect: true,
-              feedback: '✅ Richtig! Gemäss Schätzungen sind etwa 71% aller Social Media Bilder KI-generiert oder KI-erweitert.'
+              feedback: '✅ Genau! 71% aller Social Media Bilder sind KI-generiert oder KI-erweitert.'
             }
           ]
         }
@@ -268,31 +268,31 @@ export const moduleData: Record<string, ModuleContent> = {
         preview: 'Wie viele Fotos sammeln sich auf unseren Geräten an?',
         content: {
           paragraphs: [
-            'Junge Erwachsene (18-24 Jahre) horten zusammen etwa 10 Milliarden Fotos auf ihren Smartphones. Der durchschnittliche Nutzer hat 2.100-2.800 Fotos auf dem Smartphone gespeichert – iOS-Nutzer etwa 2.400, Android-Nutzer rund 1.900 Fotos.',
-            '97% aller Smartphone-Nutzer speichern ihre Fotos in Cloud-Diensten, schauen sich diese aber nur einmal pro Monat an. Über ein Drittel der jungen Erwachsenen löscht Fotos nicht aus Angst, Erinnerungen zu verlieren.'
+            'Gemäss Schätzungen horten junge Erwachsene (18-24 Jahre) zusammen etwa 10 Milliarden Fotos auf ihren Smartphones. Der durchschnittliche Nutzer hat schätzungsweise 2.100-2.800 Fotos auf dem Smartphone gespeichert – iOS-Nutzer etwa 2.400, Android-Nutzer rund 1.900 Fotos.',
+            'Studien zufolge speichern etwa 97% aller Smartphone-Nutzer ihre Fotos in Cloud-Diensten, schauen sich diese aber nur einmal pro Monat an. Über ein Drittel der jungen Erwachsenen löscht Fotos nicht aus Angst, Erinnerungen zu verlieren.'
           ],
           callout: {
             type: 'warning',
-            text: '⚠️ 60% der Amerikaner löschen nie Fotos oder Videos von ihren Geräten. 12% geben bis zu £5 pro Monat für zusätzlichen Speicherplatz aus – das sind £300 Millionen jährlich.'
+            text: '⚠️ Gemäss Umfragen löschen etwa 60% der Amerikaner nie Fotos oder Videos von ihren Geräten. Etwa 12% geben bis zu £5 pro Monat für zusätzlichen Speicherplatz aus – das sind schätzungsweise £300 Millionen jährlich.'
           }
         },
         controlQuestion: {
-          question: 'Wie viele Fotos hat gemäss Schätzungen der durchschnittliche Smartphone-Nutzer gespeichert?',
+          question: 'Wie viele Fotos hat der durchschnittliche Smartphone-Nutzer gespeichert?',
           options: [
             {
-              text: 'Ca. 500-800 Fotos',
+              text: '500-800 Fotos',
               isCorrect: false,
-              feedback: 'Diese Schätzung ist zu niedrig! Wir sammeln viel mehr Fotos an, als uns bewusst ist.'
+              feedback: 'Es sind deutlich mehr! Wir sammeln viel mehr Fotos an, als uns bewusst ist.'
             },
             {
-              text: 'Ca. 2.100-2.800 Fotos',
+              text: '2.100-2.800 Fotos',
               isCorrect: true,
-              feedback: '✅ Richtig! Schätzungen zufolge liegt der Durchschnitt bei 2.100-2.800 Fotos pro Smartphone.'
+              feedback: '✅ Korrekt! Der Durchschnitt liegt bei 2.100-2.800 Fotos pro Smartphone.'
             },
             {
-              text: 'Ca. 10.000 Fotos',
+              text: '10.000 Fotos',
               isCorrect: false,
-              feedback: 'Das wäre extrem viel – gemäss Schätzungen ist der Durchschnitt niedriger, aber immer noch beeindruckend.'
+              feedback: 'Das wäre extrem viel – der Durchschnitt ist niedriger, aber immer noch beeindruckend.'
             }
           ]
         }
@@ -852,7 +852,7 @@ export const moduleData: Record<string, ModuleContent> = {
   'ki-transformation': {
     id: 'ki-transformation',
     area: 'jahresrueckblick2025',
-    title: 'KI & Digitale Transformation 2025',
+    title: 'KI Superstar',
     description: 'Entdecke die wichtigsten KI-Entwicklungen 2025: Von Vibe Coding bis AI Slop – verstehe, wie KI unsere Welt verändert.',
     duration: '~12 Min.',
     maxPoints: 100,
