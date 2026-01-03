@@ -960,7 +960,6 @@ export const moduleData: Record<string, ModuleContent> = {
         }
       },
       {
-      {
         id: 'seo-to-geo',
         title: 'Von SEO zu GEO',
         icon: '🔍',
@@ -1383,14 +1382,14 @@ export const moduleData: Record<string, ModuleContent> = {
         preview: 'Wichtige politische Ereignisse weltweit',
         content: {
           paragraphs: [
-            '2026 ist ein Jahr bedeutender politischer Zusammenkünfte und Wahlen. Von den US-Midterms über G7- und G20-Gipfel bis zur Klimakonferenz COP31 – die internationale Politik setzt wichtige Weichen für die Zukunft.'
+            '2026 ist ein Jahr bedeutender politischer Zusammenkünfte und Wahlen. Von den US-Midterms über den G7-Gipfel bis zur Klimakonferenz COP31 – die internationale Politik setzt wichtige Weichen für die Zukunft. Zudem übernimmt die Schweiz den OSZE-Vorsitz und Bulgarien führt den Euro ein.'
           ],
           keyPoints: [
             'US Midterm-Wahlen: 3. November 2026 – Entscheidend für die zweite Hälfte von Trumps Amtszeit',
             'G7-Gipfel: 14.-16. Juni in Évian-les-Bains, Frankreich – Fokus auf Wirtschaft und Sicherheit',
-            'G20-Gipfel: 14.-15. Dezember in Miami, USA – Erste G20 unter US-Präsidentschaft seit 2009',
-            'COP31: 9.-20. November in Antalya, Türkei – UN-Klimakonferenz mit 198 Teilnehmerstaaten',
-            'Schweizer Bundesratswahlen: Dezember 2026 – Mögliche Rochaden im Bundesrat'
+            'Euro-Einführung in Bulgarien: 1. Januar 2026 – Bulgarien wird 21. Mitglied der Eurozone',
+            'Schweiz übernimmt OSZE-Vorsitz: 2026 – Organisation für Sicherheit und Zusammenarbeit in Europa',
+            'COP31: 9.-20. November in Antalya, Türkei – UN-Klimakonferenz mit 198 Teilnehmerstaaten'
           ],
           examples: [
             {
