@@ -196,12 +196,12 @@ export const moduleData: Record<string, ModuleContent> = {
         preview: 'Wie dominant sind Smartphones in der Fotografie?',
         content: {
           paragraphs: [
-            'Gemäss aktuellen Schätzungen werden über 92-95% aller Fotos weltweit heute mit Smartphones aufgenommen. Dedizierte Kameras machen nur noch etwa 3-5% aller Aufnahmen aus – ein dramatischer Wandel im Vergleich zu vor 15 Jahren.',
-            'Schätzungen zufolge werden nur etwa 40-80 Milliarden Fotos jährlich mit echten digitalen Kameras gemacht, während der Grossteil mit Smartphones entsteht.'
+            'Gemäss verschiedenen Schätzungen wird heute der überwiegende Teil aller Fotos weltweit mit Smartphones aufgenommen, während klassische Digitalkameras nur noch einen kleinen Anteil ausmachen. Im Vergleich zu vor 15 Jahren ist das ein deutlicher Wandel.',
+            'Schätzungen zufolge entstehen jährlich nur noch einige Dutzend Milliarden Fotos mit dedizierten Digitalkameras, während der Grossteil mit Smartphones aufgenommen wird.'
           ],
           callout: {
             type: 'success',
-            text: '📸 Moderne Smartphones haben heute Kameras mit über 200 Megapixeln und können durch KI-Unterstützung in vielen Situationen mit professionellen Kameras mithalten.'
+            text: '📸 Moderne Smartphones bieten Kameras mit sehr hohen Auflösungen von teils über 200 Megapixeln und können dank KI-Unterstützung in vielen Alltagssituationen erstaunlich nahe an die Bildqualität professioneller Kameras herankommen.'
           }
         },
         controlQuestion: {
@@ -232,12 +232,12 @@ export const moduleData: Record<string, ModuleContent> = {
         preview: 'Wie verbreitet ist KI in der Social Media Fotografie?',
         content: {
           paragraphs: [
-            'Gemäss Schätzungen sind etwa 71% aller Social Media Bilder mittlerweile KI-generiert oder KI-erweitert. Dies umfasst sowohl vollständig von KI erstellte Bilder als auch Fotos, die durch KI stark verändert wurden.',
-            'Schätzungen zufolge werden über 80% aller Social Media Inhalte durch KI-Algorithmen empfohlen, was die Nutzerbindung erheblich verbessert. Die KI-gesteuerte Social Media-Industrie soll bis 2031 auf 12 Milliarden Dollar wachsen.'
+            'Gemäss verschiedenen Schätzungen und Branchenberichten stammt inzwischen ein bedeutender Teil der Bilder auf Social Media aus KI-Systemen – entweder vollständig generiert oder durch KI deutlich verändert.',
+            'Ebenso wird ein grosser Anteil der Inhalte, die Nutzenden angezeigt werden, durch Empfehlungsalgorithmen gesteuert, was die Nutzerbindung nachweislich beeinflusst. Die Umsätze im Bereich KI-gestützter Social-Media-Tools und -Dienste werden für die kommenden Jahre auf ein deutliches Wachstum geschätzt, wobei Prognosen von einem Markt im Milliardenbereich ausgehen.'
           ],
           callout: {
             type: 'warning',
-            text: '⚠️ Ethische Frage: Gemäss Umfragen glauben etwa 62% der Marketer, dass eine Kennzeichnungspflicht für KI-generierte Inhalte positive Effekte auf Social Media hätte.'
+            text: '⚠️ Ethische Frage: Umfragen unter Kommunikations- und Marketingverantwortlichen zeigen, dass viele eine klare Kennzeichnung von KI-generierten Inhalten befürworten und sich davon mehr Transparenz und Vertrauen auf Social Media erhoffen.'
           }
         },
         controlQuestion: {
@@ -268,12 +268,12 @@ export const moduleData: Record<string, ModuleContent> = {
         preview: 'Wie viele Fotos sammeln sich auf unseren Geräten an?',
         content: {
           paragraphs: [
-            'Gemäss Schätzungen horten junge Erwachsene (18-24 Jahre) zusammen etwa 10 Milliarden Fotos auf ihren Smartphones. Der durchschnittliche Nutzer hat schätzungsweise 2.100-2.800 Fotos auf dem Smartphone gespeichert – iOS-Nutzer etwa 2.400, Android-Nutzer rund 1.900 Fotos.',
-            'Studien zufolge speichern etwa 97% aller Smartphone-Nutzer ihre Fotos in Cloud-Diensten, schauen sich diese aber nur einmal pro Monat an. Über ein Drittel der jungen Erwachsenen löscht Fotos nicht aus Angst, Erinnerungen zu verlieren.'
+            'Gemäss aktuellen Schätzungen speichern junge Erwachsene zwischen 18 und 24 Jahren zusammen rund 10 Milliarden Fotos auf ihren Smartphones. Im Durchschnitt liegen pro Nutzer etwa 2.100 bis 2.800 Bilder auf dem Gerät, wobei iOS-Nutzer mit ungefähr 2.400 Fotos etwas mehr sammeln als Android-Nutzer mit rund 1.900 Bildern.',
+            'Studien zeigen, dass rund 97% der Smartphone-Besitzer ihre Fotos zusätzlich in Cloud-Diensten sichern, diese Archive aber meist nur etwa einmal im Monat bewusst durchstöbern. Mehr als ein Drittel der jungen Erwachsenen fällt es schwer, Bilder zu löschen – aus Sorge, wertvolle Erinnerungen könnten verloren gehen.'
           ],
           callout: {
             type: 'warning',
-            text: '⚠️ Gemäss Umfragen löschen etwa 60% der Amerikaner nie Fotos oder Videos von ihren Geräten. Etwa 12% geben bis zu £5 pro Monat für zusätzlichen Speicherplatz aus – das sind schätzungsweise £300 Millionen jährlich.'
+            text: '⚠️ Umfragen deuten zudem darauf hin, dass ein grosser Teil der Amerikaner Fotos und Videos praktisch nie vom Gerät entfernt. Etwa jeder Achte gibt bis zu 5 Pfund pro Monat für zusätzlichen Speicherplatz aus, was sich hochgerechnet zu jährlichen Ausgaben im Bereich von mehreren hundert Millionen Pfund summiert.'
           }
         },
         controlQuestion: {
