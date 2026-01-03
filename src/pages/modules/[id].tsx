@@ -285,16 +285,17 @@ export default function ModulePage() {
   }, [module])
 
   // Auto-save on initial module load (important for modules like fotos2025 without quiz/accordion)
-  useEffect(() => {
-    if (module && auth.currentUser) {
-      const timer = setTimeout(() => {
-        autoSaveProgress() // Save that module was visited
-      }, 2000) // Save 2 seconds after module load
-      
-      return () => clearTimeout(timer)
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [module]) // Only on mount/module change, intentionally not including autoSaveProgress
+  // ❌ DISABLED: This causes race condition - saves empty data before Firebase load completes
+  // useEffect(() => {
+  //   if (module && auth.currentUser) {
+  //     const timer = setTimeout(() => {
+  //       autoSaveProgress() // Save that module was visited
+  //     }, 2000) // Save 2 seconds after module load
+  //     
+  //     return () => clearTimeout(timer)
+  //   }
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [module]) // Only on mount/module change, intentionally not including autoSaveProgress
 
   // Auto-save progress function (wrapped in useCallback for stability)
   const saveProgress = useCallback(async (params?: {
@@ -412,6 +413,15 @@ export default function ModulePage() {
     })
     
     if (module && auth.currentUser) {
+      // 🚨 SAFETY CHECK: Don't save if both answers are empty (probably during initial load)
+      const hasQuizAnswers = Object.keys(quizAnswers).length > 0
+      const hasAccordionAnswers = Object.keys(accordionAnswers).length > 0
+      
+      if (!hasQuizAnswers && !hasAccordionAnswers && module.id !== 'ausblick2026') {
+        console.log('⚠️ Conditions not met for auto-save (both empty - probably initial load)')
+        return
+      }
+      
       console.log('✅ Conditions met, setting timer for auto-save')
       const timer = setTimeout(() => {
         console.log('⏰ Timer fired, calling autoSaveProgress')
