@@ -1406,70 +1406,43 @@ export const moduleData: Record<string, ModuleContent> = {
       },
       {
         id: 'jubilaeen',
-        title: 'Jubiläen',
+        title: 'Jubiläen & Gedenktage',
         icon: '🎉',
         preview: 'Bedeutende Jahrestage und Jubiläen 2026',
         content: {
           paragraphs: [
-            '2026 feiert zahlreiche bedeutende Jubiläen – von historischen Meilensteinen über kulturelle Institutionen bis zu sportlichen Traditionen.'
+            '2026 ist ein Jahr bemerkenswerter Jubiläen – von Fantasy-Sagas über Wissenschaftspioniere bis zu historischen Wendepunkten. Die Vielfalt der Gedenktage spiegelt die Verflechtung verschiedener Kulturen und Epochen wider.',
+            'Besonders herausragend sind die Jubiläen islamischer Gelehrter: Der 900. Geburtstag von Averroes (Ibn Rushd), Brückenbauer zwischen islamischer Philosophie und dem Abendland, sowie der 100. Geburtstag von Abdus Salam, dem ersten muslimischen Nobelpreisträger in den Naturwissenschaften.'
           ],
           keyPoints: [
-            'USA: 250 Jahre Unabhängigkeit (4. Juli 1776-2026) – Semiquincentennial mit grösster Flottenparade',
-            'Sinfonieorchester Basel: 150-jähriges Bestehen – Eines der ältesten Orchester der Schweiz',
-            'Theater St. Gallen: 20. Ausgabe der Festspiele mit Verdis "Aida"',
-            'Schweizer Armee: 175 Jahre nach der Bundesverfassung 1848',
-            'ETH Zürich: 170 Jahre seit Gründung 1855'
+            '🎬 25 Jahre "Harry Potter" & "Herr der Ringe" – Beide Fantasy-Sagas starteten November/Dezember 2001',
+            '🐻 100 Jahre Winnie-the-Pooh – Erster Band erschien im Oktober 1926',
+            '⭐ 100. Geburtstag Marilyn Monroe – Filmikone geboren am 1. Juni 1926',
+            '📚 900. Geburtstag Averroes (Ibn Rushd) – Geboren 14. April 1126 in Córdoba',
+            '🕌 500 Jahre Mogulreich – Schlacht von Panipat (April 1526) begründete kulturelle Blütezeit',
+            '🔬 100. Geburtstag Abdus Salam – Erster muslimischer Nobelpreisträger (Physik 1979)',
+            '✊ 50 Jahre Aufstand in Soweto – 16. Juni 1976, Wendepunkt gegen Apartheid',
+            '🏊‍♀️ 100 Jahre Ärmelkanal-Durchquerung – Gertrude Ederle durchschwamm am 6. August 1926 als erste Frau den Kanal',
+            '📞 150 Jahre Telefon – Alexander Graham Bell erhielt März 1876 das Patent',
+            '⛪ 800. Todestag Franz von Assisi – Der Heilige starb am 3. Oktober 1226',
+            '⛪ 400 Jahre Petersdom – Einweihung der Basilika am 18. November 1626',
+            '🗽 250 Jahre USA – Unabhängigkeit am 4. Juli 1776, Semiquincentennial mit grösster Flottenparade'
           ],
           examples: [
             {
-              title: 'USA: Die grösste Flottenparade der Geschichte',
-              description: 'Am 4. Juli 2026 versammeln sich 60 Schiffe aus 30 Ländern im New Yorker Hafen für die grösste internationale Flottenparade aller Zeiten. Ein Symbol für 250 Jahre amerikanische Geschichte und internationale Beziehungen.',
+              title: 'Averroes: Brückenbauer zwischen Kulturen',
+              description: 'Ibn Rushd (1126-1198) war Philosoph, Jurist und Arzt. Seine Aristoteles-Kommentare prägten die europäische Scholastik massgeblich. Thomas von Aquin nannte ihn "den Kommentator". Seine Werke ermöglichten den Wissenstransfer zwischen islamischer und christlicher Welt.',
               type: 'info'
             },
             {
-              title: 'Sinfonieorchester Basel wird 150',
-              description: 'Das 1876 gegründete Orchester feiert mit einem Jubiläumsprogramm, das die Geschichte der Orchestertradition in der Schweiz würdigt.',
+              title: 'Abdus Salam: Pionier der Teilchenphysik',
+              description: 'Der pakistanische Physiker (1926-1996) erhielt 1979 den Nobelpreis für die elektroschwache Vereinigung. Er gründete das International Centre for Theoretical Physics in Triest, um Wissenschaftler aus Entwicklungsländern zu fördern.',
               type: 'success'
             }
           ],
           callout: {
             type: 'success',
-            text: '🎊 2026 ist ein Jahr der Feierlichkeiten – von kulturellen Institutionen bis zu historischen Meilensteinen.'
-          }
-        }
-      },
-      {
-        id: 'veranstaltungen',
-        title: 'Veranstaltungen',
-        icon: '🎭',
-        preview: 'Sportliche und kulturelle Highlights weltweit und in der Schweiz',
-        content: {
-          paragraphs: [
-            '2026 verspricht ein spektakuläres Jahr für Sport- und Kulturbegeisterte zu werden. Von Olympischen Winterspielen über die Eishockey-WM in der Schweiz bis zu legendären Festivals – für jeden ist etwas dabei.'
-          ],
-          keyPoints: [
-            'Olympische Winterspiele Milano-Cortina: 6.-22. Februar – Ski-Bergsteigen wird olympisch',
-            'IIHF Eishockey-WM: 15.-31. Mai (Zürich & Fribourg) – Schweiz gegen Deutschland am 18. Mai',
-            'Open Air St. Gallen: 25.-28. Juni mit Twenty One Pilots',
-            'Montreux Jazz Festival: 2.-19. Juli mit 17 Bühnen',
-            'Gurtenfestival: 15.-18. Juli mit Lorde',
-            'Locarno Film Festival: 5.-15. August'
-          ],
-          examples: [
-            {
-              title: 'Olympische Winterspiele 2026',
-              description: 'Die Olympischen Winterspiele 2026 finden in Milano-Cortina (Italien) statt. Erstmals wird Ski-Bergsteigen olympische Disziplin. Die Schweizer Delegation hofft auf zahlreiche Medaillen.',
-              type: 'info'
-            },
-            {
-              title: 'Schweizer Eishockey-Fest',
-              description: 'Die IIHF WM in Zürich (Swiss Life Arena) und Fribourg bringt die besten Eishockey-Nationen in die Schweiz. Highlight: Schweiz gegen Deutschland am 18. Mai.',
-              type: 'success'
-            }
-          ],
-          callout: {
-            type: 'success',
-            text: '🏆 2026 ist das Jahr der Mega-Events – von Olympia bis zur Eishockey-WM in der Schweiz.'
+            text: '🌍 2026 würdigt Persönlichkeiten und Ereignisse aus allen Kulturen – von Fantasy-Literatur über islamische Wissenschaft bis zu Menschenrechts-Meilensteinen.'
           }
         }
       }
@@ -1604,43 +1577,43 @@ export const moduleData: Record<string, ModuleContent> = {
       },
       {
         type: 'knowledge',
-        question: 'Welches sportliche Grossereignis findet 2026 in der Schweiz statt?',
+        question: 'Was ändert sich 2026 im Schweizer Gesundheitswesen bei der Tarifierung?',
         options: [
           {
-            text: 'Olympische Winterspiele',
-            correct: false,
-            feedback: '❌ Falsch. Die Winterolympiade findet in Milano-Cortina (Italien) statt.'
-          },
-          {
-            text: 'IIHF Eishockey-Weltmeisterschaft im Mai',
+            text: 'TARDOC ersetzt TARMED als neues Tarifsystem',
             correct: true,
-            feedback: '✅ Richtig! Vom 15.-31. Mai in Zürich (Swiss Life Arena) und Fribourg.'
+            feedback: '✅ Richtig! TARDOC ist das neue Tarifsystem für ärztliche Leistungen.'
           },
           {
-            text: 'FIFA Fussball-Weltmeisterschaft',
+            text: 'Die Krankenkassenprämien werden halbiert',
             correct: false,
-            feedback: '❌ Falsch. Die FIFA WM findet in USA/Mexiko/Kanada statt.'
+            feedback: '❌ Falsch. Es geht um das Tarifsystem, nicht um Prämien.'
+          },
+          {
+            text: 'Alle medizinischen Leistungen werden kostenlos',
+            correct: false,
+            feedback: '❌ Falsch. Es ändert sich nur das Tarifsystem.'
           }
         ]
       },
       {
         type: 'knowledge',
-        question: 'Wann findet die FIFA Fussball-WM 2026 statt?',
+        question: 'Was ermöglichen Elektrizitätsgemeinschaften ab 2026 in der Schweiz?',
         options: [
           {
-            text: 'Juni bis Juli 2026',
+            text: 'Gemeinsame Stromnutzung in Quartieren',
             correct: true,
-            feedback: '✅ Richtig! Vom 11. Juni bis 19. Juli 2026 in drei Ländern.'
+            feedback: '✅ Richtig! Elektrizitätsgemeinschaften erlauben die gemeinsame Nutzung von Strom in Quartieren.'
           },
           {
-            text: 'Mai bis Juni 2026',
+            text: 'Kostenloser Strom für alle',
             correct: false,
-            feedback: '❌ Falsch. Die WM beginnt erst im Juni.'
+            feedback: '❌ Falsch. Es geht um die gemeinsame Nutzung, nicht um Gratisenergie.'
           },
           {
-            text: 'November bis Dezember 2026',
+            text: 'Verbot von Solaranlagen',
             correct: false,
-            feedback: '❌ Falsch. Das war die WM 2022 in Katar.'
+            feedback: '❌ Falsch. Im Gegenteil, es fördert erneuerbare Energien.'
           }
         ]
       },
@@ -1730,22 +1703,22 @@ export const moduleData: Record<string, ModuleContent> = {
       },
       {
         type: 'knowledge',
-        question: 'Wie viele Teams nehmen erstmals an der FIFA WM 2026 teil?',
+        question: 'Welches neue Recht erhalten Käufer im Schweizer Baurecht ab 2026?',
         options: [
           {
-            text: '32 Teams (wie bisher)',
-            correct: false,
-            feedback: '❌ Falsch. Die WM 2026 wird erweitert.'
-          },
-          {
-            text: '48 Teams (erstmals erweitert)',
+            text: '60-tägiges Mängelrügerecht, Nachbesserungsrecht kann nicht ausgeschlossen werden',
             correct: true,
-            feedback: '✅ Richtig! Die WM 2026 ist die erste mit 48 teilnehmenden Teams in 104 Spielen.'
+            feedback: '✅ Richtig! Käufer haben 60 Tage Zeit Mängel zu rügen und ein Nachbesserungsrecht.'
           },
           {
-            text: '64 Teams',
+            text: 'Kostenlose Renovierung aller Altbauten',
             correct: false,
-            feedback: '❌ Falsch. Es sind 48 Teams.'
+            feedback: '❌ Falsch. Es geht um Käuferrechte bei Neubauten.'
+          },
+          {
+            text: 'Verbot von Hypotheken',
+            correct: false,
+            feedback: '❌ Falsch. Es ändert sich nur das Mängelrecht.'
           }
         ]
       },
@@ -1770,12 +1743,7 @@ export const moduleData: Record<string, ModuleContent> = {
             feedback: ''
           },
           {
-            text: '🎉 Jubiläen',
-            correct: true,
-            feedback: ''
-          },
-          {
-            text: '🎭 Veranstaltungen',
+            text: '🎉 Jubiläen & Gedenktage',
             correct: true,
             feedback: ''
           }
