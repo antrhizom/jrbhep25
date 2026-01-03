@@ -490,25 +490,21 @@ export default function ModulePage() {
     return textAnswers
   }
   
-  // 🔧 HELPER: Remove emojis from text for comparison (ES5 compatible)
-  const removeEmojis = (text: string): string => {
-    // Remove emojis using surrogate pairs and common ranges (ES5 compatible)
+  // 🔧 HELPER: Extract only alphanumeric characters for comparison
+  const normalizeForComparison = (text: string): string => {
+    // Keep only letters, numbers, and spaces - remove everything else
     return text
-      .replace(/[\uD800-\uDBFF][\uDC00-\uDFFF]/g, '') // Remove emoji surrogate pairs
-      .replace(/[\u2600-\u27BF]/g, '') // Remove misc symbols & dingbats
-      .replace(/[\u2300-\u23FF]/g, '') // Remove misc technical
-      .replace(/[\u2B50-\u2B55]/g, '') // Remove stars
-      .replace(/[\uFE00-\uFE0F]/g, '') // Remove variation selectors
+      .replace(/[^a-zA-Z0-9äöüÄÖÜß\s]/g, '') // Remove all non-alphanumeric (keeps German umlauts)
       .replace(/\s+/g, ' ') // Normalize whitespace
       .trim()
       .toLowerCase()
   }
   
-  // 🔧 HELPER: Fuzzy text match - ignores emojis and case
+  // 🔧 HELPER: Fuzzy text match - compares only alphanumeric content
   const fuzzyTextMatch = (text1: string, text2: string): boolean => {
-    const clean1 = removeEmojis(text1)
-    const clean2 = removeEmojis(text2)
-    return clean1 === clean2
+    const norm1 = normalizeForComparison(text1)
+    const norm2 = normalizeForComparison(text2)
+    return norm1 === norm2
   }
   
   // 🔄 HELPER: Convert quiz answers from text to index (for loading)
@@ -2357,7 +2353,8 @@ export default function ModulePage() {
             )}
             
             {/* FindMind Results iframe nach Bestätigung - nur für andere Module */}
-            {module.id !== 'jahresanalyse' && showQuizResults && shuffledQuestions.some(q => q.showResultsIframe && q.resultsUrl) && (
+            {/* NUR beim ersten Mal zeigen (nach Wissens-Fragen), NICHT nach Feedback */}
+            {module.id !== 'jahresanalyse' && showQuizResults && currentStep !== 'quiz' && shuffledQuestions.some(q => q.showResultsIframe && q.resultsUrl) && (
               <div className="mt-6 bg-green-50 border-2 border-green-300 rounded-xl p-6">
                 <h4 className="font-bold text-green-900 mb-4">📈 Umfrage-Ergebnisse: So nutzen andere KI</h4>
                 <p className="text-green-800 text-sm mb-4">
