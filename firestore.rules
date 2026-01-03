@@ -1,0 +1,43 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Helper-Funktion: Überprüfung ob Request authentifiziert ist
+    function isSignedIn() {
+      return request.auth != null;
+    }
+    
+    // User-Dokumente: Jeder Nutzer kann nur seine eigenen Daten lesen/schreiben
+    match /users/{userId} {
+      allow read: if isSignedIn() && request.auth.uid == userId;
+      allow write: if isSignedIn() && request.auth.uid == userId;
+    }
+    
+    // Modul-Fortschritt: Jeder Nutzer kann nur seinen eigenen Fortschritt ändern
+    match /users/{userId}/modules/{moduleId} {
+      allow read: if isSignedIn() && request.auth.uid == userId;
+      allow write: if isSignedIn() 
+                     && request.auth.uid == userId
+                     && request.resource.data.keys().hasAll(['completed', 'score', 'timestamp']);
+    }
+    
+    // Zertifikate: Nur Lesen der eigenen Zertifikate
+    match /users/{userId}/certificates/{certificateId} {
+      allow read: if isSignedIn() && request.auth.uid == userId;
+      allow create: if isSignedIn() 
+                      && request.auth.uid == userId
+                      && request.resource.data.keys().hasAll(['moduleId', 'score', 'timestamp', 'userName']);
+    }
+    
+    // Statistiken (optional für Analytics)
+    match /statistics/{documentId} {
+      allow read: if false; // Nur Admin via Backend
+      allow write: if false; // Nur Admin via Backend
+    }
+    
+    // Default: Alles andere verbieten
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
