@@ -189,8 +189,18 @@ export default function ModulePage() {
               }
               
               if (savedModule.terminologyAnswers) {
-                console.log('✅ Restoring terminologyAnswers:', savedModule.terminologyAnswers)
-                setTerminologyAnswers(savedModule.terminologyAnswers)
+                console.log('📥 Loading terminologyAnswers (text):', savedModule.terminologyAnswers)
+                
+                // 🔄 Convert TEXT to INDEX for UI
+                const terminologyAnswersIndices = convertTerminologyAnswersToIndices(
+                  savedModule.terminologyAnswers,
+                  finalShuffledQuestions
+                )
+                
+                console.log('✅ Converted to indices:', terminologyAnswersIndices)
+                setTerminologyAnswers(terminologyAnswersIndices)
+              } else {
+                console.log('ℹ️ No terminologyAnswers to restore')
               }
               
               if (savedModule.terminologyQuizCompleted) {
@@ -298,12 +308,23 @@ export default function ModulePage() {
         const userData = userDoc.data()
         const modules = userData.modules || {}
         
+        // 🔄 Convert answers from INDEX to TEXT for storage
+        const quizAnswersText = convertQuizAnswersToText(quizAnswers, shuffledQuestions)
+        const accordionAnswersText = convertAccordionAnswersToText(accordionAnswers, shuffledAccordionItems)
+        const terminologyAnswersText = convertTerminologyAnswersToText(terminologyAnswers, shuffledQuestions)
+        
+        console.log('🔄 Converted to text for storage:', {
+          quizAnswersText,
+          accordionAnswersText,
+          terminologyAnswersText
+        })
+        
         // Save current state
         modules[module.id] = {
           ...modules[module.id],
-          quizAnswers: quizAnswers,
-          accordionAnswers: accordionAnswers,
-          terminologyAnswers: terminologyAnswers,
+          quizAnswers: quizAnswersText,  // 📝 Store as TEXT not index
+          accordionAnswers: accordionAnswersText,  // 📝 Store as TEXT not index
+          terminologyAnswers: terminologyAnswersText,  // 📝 Store as TEXT not index
           terminologyQuizCompleted: terminologyQuizCompleted,
           currentStep: currentStep,
           lastUpdated: new Date().toISOString()
@@ -322,7 +343,7 @@ export default function ModulePage() {
     } catch (error) {
       console.error('❌ Error auto-saving progress:', error)
     }
-  }, [module, quizAnswers, accordionAnswers, terminologyAnswers, terminologyQuizCompleted, currentStep])
+  }, [module, quizAnswers, accordionAnswers, terminologyAnswers, terminologyQuizCompleted, currentStep, shuffledQuestions, shuffledAccordionItems])
 
   // Auto-save whenever answers change (for ALL modules)
   useEffect(() => {
@@ -518,6 +539,71 @@ export default function ModulePage() {
     return indexAnswers
   }
 
+  // 🔄 HELPER: Convert terminology answers from index to text (for saving)
+  const convertTerminologyAnswersToText = (
+    answers: typeof terminologyAnswers,
+    questions: QuizQuestion[]
+  ): { [key: number]: string } => {
+    const textAnswers: { [key: number]: string } = {}
+    
+    Object.keys(answers).forEach(qIndexStr => {
+      const qIndex = parseInt(qIndexStr)
+      const optIndex = answers[qIndex]
+      const question = questions[qIndex]
+      
+      if (!question) {
+        console.warn(`⚠️ Terminology Question ${qIndex} not found!`)
+        return
+      }
+      
+      if (typeof optIndex === 'number') {
+        textAnswers[qIndex] = question.options[optIndex]?.text || ''
+      }
+    })
+    
+    return textAnswers
+  }
+
+  // 🔄 HELPER: Convert terminology answers from text to index (for loading)
+  // SUPPORTS BOTH: Text (new) AND Index (old/legacy) formats!
+  const convertTerminologyAnswersToIndices = (
+    textAnswers: { [key: number]: string | number },  // ⚠️ Can be text OR number!
+    questions: QuizQuestion[]
+  ): typeof terminologyAnswers => {
+    const indexAnswers: typeof terminologyAnswers = {}
+    
+    Object.keys(textAnswers).forEach(qIndexStr => {
+      const qIndex = parseInt(qIndexStr)
+      const answer = textAnswers[qIndex]
+      const question = questions[qIndex]
+      
+      if (!question) {
+        console.warn(`⚠️ Terminology Question ${qIndex} not found!`)
+        return
+      }
+      
+      // 🔥 LEGACY SUPPORT: If answer is already a number, just use it!
+      if (typeof answer === 'number') {
+        console.log(`✅ Terminology Q${qIndex}: Legacy format (number) ${answer}`)
+        indexAnswers[qIndex] = answer
+        return
+      }
+      
+      // NEW FORMAT: Convert text to index
+      if (typeof answer === 'string') {
+        const index = question.options.findIndex(opt => opt.text === answer)
+        if (index !== -1) {
+          indexAnswers[qIndex] = index
+          console.log(`✅ Terminology Q${qIndex}: "${answer}" → index ${index}`)
+        } else {
+          console.warn(`⚠️ Terminology Q${qIndex}: Text "${answer}" not found!`)
+        }
+      }
+    })
+    
+    return indexAnswers
+  }
+
   const handleQuizAnswer = (questionIndex: number, optionIndex: number) => {
     console.log('📝 handleQuizAnswer called:', { questionIndex, optionIndex })
     
@@ -614,10 +700,12 @@ export default function ModulePage() {
       // 🔄 Convert answers from INDEX to TEXT for storage
       const quizAnswersText = convertQuizAnswersToText(currentQuizAnswers, shuffledQuestions)
       const accordionAnswersText = convertAccordionAnswersToText(currentAccordionAnswers, shuffledAccordionItems)
+      const terminologyAnswersText = convertTerminologyAnswersToText(currentTerminologyAnswers, shuffledQuestions)
       
       console.log('🔄 Converted to text for storage:', {
         quizAnswersText,
-        accordionAnswersText
+        accordionAnswersText,
+        terminologyAnswersText
       })
       
       // Save current state - PRESERVE progress, score, completed
@@ -628,7 +716,7 @@ export default function ModulePage() {
         progress: existingModule.progress ?? 1,  // ⚠️ CRITICAL: Set progress so markModuleAsStarted doesn't reset!
         quizAnswers: quizAnswersText,  // 📝 Store as TEXT not index
         accordionAnswers: accordionAnswersText,  // 📝 Store as TEXT not index
-        terminologyAnswers: currentTerminologyAnswers,
+        terminologyAnswers: terminologyAnswersText,  // 📝 Store as TEXT not index
         terminologyQuizCompleted: terminologyQuizCompleted,
         currentStep: currentStep,
         lastUpdated: new Date().toISOString()
@@ -818,12 +906,13 @@ export default function ModulePage() {
           // 🔄 Convert answers from INDEX to TEXT for storage
           const quizAnswersText = convertQuizAnswersToText(quizAnswers, shuffledQuestions)
           const accordionAnswersText = convertAccordionAnswersToText(accordionAnswers, shuffledAccordionItems)
+          const terminologyAnswersText = convertTerminologyAnswersToText(terminologyAnswers, shuffledQuestions)
           
           console.log('🎯 Quiz submitted! Existing module data:', existingModule)
           console.log('🎯 Current answers to save (as text):', {
             quizAnswersText,
             accordionAnswersText,
-            terminologyAnswers
+            terminologyAnswersText
           })
           
           // Update module progress - PRESERVE ALL EXISTING DATA
@@ -835,7 +924,7 @@ export default function ModulePage() {
             // Explicitly save current answers AS TEXT
             quizAnswers: quizAnswersText,  // 📝 Store as TEXT not index
             accordionAnswers: accordionAnswersText,  // 📝 Store as TEXT not index
-            terminologyAnswers: terminologyAnswers,
+            terminologyAnswers: terminologyAnswersText,  // 📝 Store as TEXT not index
             terminologyQuizCompleted: terminologyQuizCompleted,
             currentStep: currentStep,
             lastUpdated: new Date().toISOString()
@@ -871,12 +960,29 @@ export default function ModulePage() {
           const { collection, addDoc } = await import('firebase/firestore')
           for (let qIndex = 0; qIndex < shuffledQuestions.length; qIndex++) {
             const selectedAnswer = quizAnswers[qIndex]
+            const question = shuffledQuestions[qIndex]
+            
             if (selectedAnswer !== null && selectedAnswer !== undefined) {
+              // Convert answer to text for consistent aggregation
+              let selectedOptionText: string | string[]
+              
+              if (Array.isArray(selectedAnswer)) {
+                // Multi-select: array of indices → array of texts
+                selectedOptionText = selectedAnswer.map(optIndex => 
+                  question.options[optIndex]?.text || ''
+                ).filter(text => text !== '')
+              } else if (typeof selectedAnswer === 'number') {
+                // Single select: index → text
+                selectedOptionText = question.options[selectedAnswer]?.text || ''
+              } else {
+                continue // Skip invalid answers
+              }
+              
               await addDoc(collection(db, 'survey_responses'), {
                 moduleId: module.id,
                 questionIndex: qIndex,
-                questionText: shuffledQuestions[qIndex].question,
-                selectedOption: selectedAnswer,
+                questionText: question.question,
+                selectedOption: selectedOptionText,  // 📝 Store as TEXT not index
                 userId: user.uid,
                 timestamp: new Date()
               })
@@ -912,7 +1018,7 @@ export default function ModulePage() {
       // Calculate aggregated results per question
       const aggregated: { [qIndex: number]: { [optIndex: number]: number } } = {}
       
-      shuffledQuestions.forEach((_, qIndex) => {
+      shuffledQuestions.forEach((question, qIndex) => {
         aggregated[qIndex] = {}
         
         // Get all responses for this question
@@ -920,24 +1026,24 @@ export default function ModulePage() {
         const total = questionResponses.length
         
         if (total > 0) {
-          // Count responses per option
-          const counts: { [optIndex: number]: number } = {}
+          // Count responses per option TEXT (not index)
+          const counts: { [optText: string]: number } = {}
           questionResponses.forEach(r => {
-            const opt = r.selectedOption
-            counts[opt] = (counts[opt] || 0) + 1
-          })
-          
-          // Convert to percentages
-          Object.keys(counts).forEach(optIndex => {
-            const count = counts[parseInt(optIndex)]
-            aggregated[qIndex][parseInt(optIndex)] = Math.round((count / total) * 100)
-          })
-          
-          // Fill in 0% for options with no responses
-          shuffledQuestions[qIndex].options.forEach((_, optIdx) => {
-            if (aggregated[qIndex][optIdx] === undefined) {
-              aggregated[qIndex][optIdx] = 0
+            const optText = r.selectedOption
+            if (typeof optText === 'string') {
+              counts[optText] = (counts[optText] || 0) + 1
+            } else if (Array.isArray(optText)) {
+              // Multi-select: count each selected option
+              optText.forEach(text => {
+                counts[text] = (counts[text] || 0) + 1
+              })
             }
+          })
+          
+          // Map text counts back to current option indices
+          question.options.forEach((option, optIdx) => {
+            const count = counts[option.text] || 0
+            aggregated[qIndex][optIdx] = Math.round((count / total) * 100)
           })
         }
       })
