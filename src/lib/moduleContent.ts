@@ -564,38 +564,38 @@ export const moduleData: Record<string, ModuleContent> = {
       },
       {
         id: 'ki-durchbruch',
-        title: 'Google Gemini mit nano banana und veo 3',
+        title: 'Von Chatbots zu autonomen KI-Agenten',
         icon: '🤖',
-        preview: 'KI-Funktionen revolutionieren Fotografie und Video',
+        preview: 'KI übernimmt eigenständig komplexe Aufgaben',
         content: {
           paragraphs: [
-            'Google Gemini führte 2025 «nano banana» ein – eine KI-Funktion zur drastischen Verbesserung von Fotografien. Das Tool optimiert Belichtung, Schärfe und Komposition automatisch und markiert einen Durchbruch in der computational photography.',
-            'Gleichzeitig präsentierte Google «veo 3», ein fortschrittliches KI-System zur Videogenerierung und -bearbeitung. Zusammen mit Tools wie Midjourney, DALL-E und Stable Diffusion revolutionieren diese KI-Systeme die visuelle Content-Erstellung.'
+            'Das Jahr 2025 markiert den endgültigen Übergang der künstlichen Intelligenz von reinen Text-Bots hin zu autonomen Agenten. Diese KI-Systeme reagieren nicht nur auf Befehle, sondern führen eigenständig komplexe Aufgaben am Computer aus – sie buchen Reisen, verwalten E-Mails oder steuern Software-Workflows ohne menschliches Eingreifen.',
+            'Parallel dazu hat KI-gestütztes Coding das Berufsbild von Programmierern massiv transformiert. Werkzeuge erzeugen ganze Code-Blöcke auf Basis einfacher Beschreibungen, während IT-Fachkräfte sich auf Architektur und Überprüfung konzentrieren. Der Wettlauf um die Artificial General Intelligence (AGI) mit menschenähnlichen kognitiven Fähigkeiten erreichte 2025 neue Höhepunkte.'
           ],
           keyPoints: [
-            'nano banana: Automatische Foto-Optimierung',
-            'veo 3: KI-gestützte Videogenerierung',
-            'Integration in Google-Ökosystem',
-            'Durchbruch bei visueller KI'
+            'Autonome Agenten: KI führt Aufgaben eigenständig aus',
+            'KI-gestütztes Coding verändert Softwareentwicklung',
+            'Jagd nach AGI (menschenähnliche Intelligenz)',
+            'Von Konversation zur produktiven Handlung'
           ]
         },
         controlQuestion: {
-          question: 'Was macht «nano banana» von Google Gemini?',
+          question: 'Was ist der Hauptunterschied zwischen klassischen Chatbots und autonomen KI-Agenten?',
           options: [
             {
-              text: 'Generiert Videos aus Text',
+              text: 'Agenten können nur Texte generieren',
               isCorrect: false,
-              feedback: 'Nicht korrekt. Das ist die Funktion von veo 3.'
+              feedback: 'Nicht korrekt. Das können klassische Chatbots auch.'
             },
             {
-              text: 'Optimiert Fotos automatisch',
+              text: 'Agenten führen eigenständig komplexe Aufgaben aus',
               isCorrect: true,
-              feedback: '✅ Richtig! nano banana verbessert Belichtung, Schärfe und Komposition von Fotos.'
+              feedback: '✅ Richtig! Autonome Agenten handeln produktiv statt nur zu konversieren.'
             },
             {
-              text: 'Übersetzt Texte',
+              text: 'Agenten sind langsamer als Chatbots',
               isCorrect: false,
-              feedback: 'Nicht korrekt. Das ist eine allgemeine Gemini-Funktion, nicht nano banana.'
+              feedback: 'Nicht korrekt. Die Geschwindigkeit ist nicht der Hauptunterschied.'
             }
           ]
         }
