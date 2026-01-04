@@ -62,7 +62,7 @@ export function AIDisclaimer({ className = '' }: AIDisclaimerProps) {
 
                 <div className="bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded mt-4">
                   <p className="text-sm text-gray-700">
-                    <strong className="text-yellow-700">Wichtig:</strong> Alle Inhalte wurden durch die Autoren geprüft und freigegeben, nicht durch den hep Verlag. 
+                    <strong className="text-yellow-700">Wichtig:</strong> Alle Inhalte wurden durch die Autoren geprüft und freigegeben. 
                     Die sachliche Korrektheit und pädagogische Eignung sind durch die Autoren sichergestellt.
                   </p>
                 </div>
