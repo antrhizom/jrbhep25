@@ -160,7 +160,7 @@ export const moduleData: Record<string, ModuleContent> = {
         preview: 'Eine beeindruckende Zahl zur weltweiten Fotografie',
         content: {
           paragraphs: [
-            'Gemäss Schätzungen werden im Jahr 2025 weltweit etwa 2 Billionen digitale Fotos aufgenommen. Das entspricht schätzungsweise etwa 61\'000 Fotos pro Sekunde – oder etwa 5.3 Milliarden Fotos pro Tag.',
+            'Gemäss Schätzungen wurden im Jahr 2025 weltweit etwa 2 Billionen digitale Fotos aufgenommen. Das entspricht schätzungsweise etwa 61\'000 Fotos pro Sekunde – oder etwa 5.3 Milliarden Fotos pro Tag.',
             'Schätzungen zufolge führen die USA mit durchschnittlich 20 Bildern pro Tag pro Person, während Europäer und Europäerinnen mit etwa 5 Bildern pro Tag etwas zurückhaltender sind.'
           ],
           callout: {
@@ -169,7 +169,7 @@ export const moduleData: Record<string, ModuleContent> = {
           }
         },
         controlQuestion: {
-          question: 'Wie viele Fotos werden 2025 weltweit pro Tag aufgenommen?',
+          question: 'Wie viele Fotos wurden 2025 weltweit pro Tag aufgenommen?',
           options: [
             {
               text: '500 Millionen',
@@ -205,7 +205,7 @@ export const moduleData: Record<string, ModuleContent> = {
           }
         },
         controlQuestion: {
-          question: 'Welcher Prozentsatz aller Fotos wird 2025 mit Smartphones gemacht?',
+          question: 'Welcher Prozentsatz aller Fotos wurde 2025 mit Smartphones gemacht?',
           options: [
             {
               text: '50%',
