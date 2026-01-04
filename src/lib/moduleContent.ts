@@ -136,7 +136,7 @@ export const moduleData: Record<string, ModuleContent> = {
           list: [],
           example: {
             type: 'info',
-            text: '<iframe src="https://padlet.com/hepverlag/die-fotos-des-jahres-von-unicef-4ty1up0zfojgg7y3" style="width:100%; height:608px; border:none; border-radius:8px" title="UNICEF Fotoreportagen" allow="camera;microphone;geolocation"></iframe>'
+            text: '<iframe src="https://padlet.com/hepverlag/die-fotos-des-jahres-von-unicef-4ty1up0zfojgg7y3" style="width:100%; height:608px; border:none; border-radius:8px" title="UNICEF Fotoreportagen" allow="camera;microphone;geolocation" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>'
           }
         }
       },
@@ -147,7 +147,7 @@ export const moduleData: Record<string, ModuleContent> = {
           list: [],
           example: {
             type: 'success',
-            text: '<iframe src="https://padlet.com/hepverlag/bilder-des-jahres-2025-uos70aznxq25cuoa" style="width:100%; height:608px; border:none; border-radius:8px" title="Bilder des Jahres 2025" allow="camera;microphone;geolocation"></iframe>'
+            text: '<iframe src="https://padlet.com/hepverlag/bilder-des-jahres-2025-uos70aznxq25cuoa" style="width:100%; height:608px; border:none; border-radius:8px" title="Bilder des Jahres 2025" allow="camera;microphone;geolocation" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>'
           }
         }
       }
@@ -161,7 +161,7 @@ export const moduleData: Record<string, ModuleContent> = {
         content: {
           paragraphs: [
             'Gemäss Schätzungen werden im Jahr 2025 weltweit etwa 2 Billionen digitale Fotos aufgenommen. Das entspricht schätzungsweise etwa 61\'000 Fotos pro Sekunde – oder etwa 5.3 Milliarden Fotos pro Tag.',
-            'Schätzungen zufolge führen die USA mit durchschnittlich 20 Bildern pro Tag pro Person, während Europäer mit etwa 5 Bildern pro Tag etwas zurückhaltender sind.'
+            'Schätzungen zufolge führen die USA mit durchschnittlich 20 Bildern pro Tag pro Person, während Europäer und Europäerinnen mit etwa 5 Bildern pro Tag etwas zurückhaltender sind.'
           ],
           callout: {
             type: 'info',
