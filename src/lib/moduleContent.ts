@@ -233,7 +233,7 @@ export const moduleData: Record<string, ModuleContent> = {
         content: {
           paragraphs: [
             'Gemäss verschiedenen Schätzungen und Branchenberichten stammt inzwischen ein bedeutender Teil der Bilder auf Social Media aus KI-Systemen – entweder vollständig generiert oder durch KI deutlich verändert.',
-            'Ebenso wird ein grosser Anteil der Inhalte, die Nutzenden angezeigt werden, durch Empfehlungsalgorithmen gesteuert, was die Nutzerbindung nachweislich beeinflusst. Die Umsätze im Bereich KI-gestützter Social-Media-Tools und -Dienste werden für die kommenden Jahre auf ein deutliches Wachstum geschätzt, wobei Prognosen von einem Markt im Milliardenbereich ausgehen.'
+            'Ebenso wird ein grosser Anteil der Inhalte, die Nutzenden angezeigt werden, durch Empfehlungsalgorithmen gesteuert, was die Nutzerbindung nachweislich beeinflusst. Für KI-gestützte Social-Media-Tools und -Dienste wird in den kommenden Jahren ein starkes Umsatzwachstum erwartet. Prognosen gehen von einem Markt in Milliardenhöhe aus.'
           ],
           callout: {
             type: 'warning',
@@ -241,7 +241,7 @@ export const moduleData: Record<string, ModuleContent> = {
           }
         },
         controlQuestion: {
-          question: 'Wie viel Prozent der Social Media Bilder sind KI-generiert oder KI-erweitert?',
+          question: 'Wie viel Prozent der Social-Media-Bilder sind KI-generiert oder KI-erweitert?',
           options: [
             {
               text: '25%',
@@ -456,7 +456,7 @@ export const moduleData: Record<string, ModuleContent> = {
         content: {
           paragraphs: [
             'Am 20. Januar 2025 wurde Donald Trump als 47. Präsident der Vereinigten Staaten vereidigt. Dies markiert seine Rückkehr ins Weisse Haus nach seiner Wahlniederlage 2020.',
-            'Trump kündigte unmittelbar nach Amtsantritt weitreichende Politikänderungen an, darunter neue Handelszölle, strengere Einwanderungspolitik und eine Neuausrichtung der US-Aussenpolitik.'
+            'Trump kündigte unmittelbar nach Amtsantritt weitreichende Politikänderungen an, darunter neue Handelszölle, eine strengere Einwanderungspolitik und eine Neuausrichtung der US-Aussenpolitik.'
           ],
           keyPoints: [
             'Amtseinführung: 20. Januar 2025',
@@ -493,7 +493,7 @@ export const moduleData: Record<string, ModuleContent> = {
         preview: 'Weltweit erste umfassende KI-Regulierung',
         content: {
           paragraphs: [
-            'Am 12. Juli 2024 wurde die EU-Verordnung zur Regulierung künstlicher Intelligenz im Amtsblatt veröffentlicht. Der «AI Act» ist das erste umfassende KI-Gesetz weltweit und hat auch Folgen für Drittländer wie die Schweiz.',
+            'Am 12. Juli 2024 wurde die EU-Verordnung zur Regulierung künstlicher Intelligenz im Amtsblatt der Europäischen Union veröffentlicht. Der «AI Act» ist das erste umfassende KI-Gesetz weltweit und hat auch Folgen für Drittländer wie die Schweiz.',
             'Das Gesetz kategorisiert KI-Systeme nach Risikostufen: Bestimmte Anwendungen wie Social Scoring sind verboten. Für Hochrisiko-KI-Systeme gelten besondere Transparenzanforderungen und Registrierung in einer EU-Datenbank. Bei Verstössen drohen Geldbussen bis zu 35 Millionen Euro oder 7% des Jahresumsatzes.'
           ],
           keyPoints: [
@@ -861,11 +861,11 @@ export const moduleData: Record<string, ModuleContent> = {
         preview: 'Die neue Art des Programmierens mit KI',
         content: {
           paragraphs: [
-            '"Vibe Coding" beschreibt eine neue Herangehensweise an die Softwareentwicklung, bei der Entwickler natürlichsprachliche Beschreibungen nutzen, um mit KI-Assistenten wie GitHub Copilot, Cursor oder Claude Code zu kollaborieren. Statt jede Zeile selbst zu schreiben, formulieren Entwickler ihre Absichten und Konzepte – die KI generiert dann funktionierenden Code.'
+            '"Vibe Coding" beschreibt eine neue Herangehensweise an die Softwareentwicklung, bei der Entwickler*innen natürlichsprachliche Beschreibungen nutzen, um mit KI-Assistenten wie GitHub Copilot, Cursor oder Claude Code zu kollaborieren. Statt jede Zeile selbst zu schreiben, formulieren Entwickler*innen ihre Absichten und Konzepte – die KI generiert dann einen funktionierenden Code.'
           ],
           callout: {
             type: 'info',
-            text: '💡 2025 zeigt: Die meisten professionellen Entwickler nutzen KI-Tools mindestens wöchentlich. Die "Vibes" eines Projekts werden wichtiger als perfekte technische Spezifikationen.'
+            text: '💡 2025 zeigt: Die meisten professionellen Entwickler*innen nutzen KI-Tools mindestens wöchentlich. Die "Vibes" eines Projekts werden wichtiger als perfekte technische Spezifikationen.'
           }
         },
         controlQuestion: {
@@ -896,15 +896,15 @@ export const moduleData: Record<string, ModuleContent> = {
         preview: 'Weniger Junior-Stellen im IT-Bereich',
         content: {
           paragraphs: [
-            'Der IT-Arbeitsmarkt durchläuft 2025 einen drastischen Wandel: Viele Unternehmen stellen deutlich weniger Junior-Entwickler ein. Der Grund: KI-Tools wie GitHub Copilot, Cursor und Claude übernehmen viele Aufgaben, die früher Einstiegspositionen ausmachten – einfache Bug-Fixes, Code-Reviews, Dokumentation und Standard-Implementierungen.'
+            'Der IT-Arbeitsmarkt durchläuft 2025 einen drastischen Wandel: Viele Unternehmen stellen deutlich weniger Junior-Entwickler*innen ein. Der Grund: KI-Tools wie GitHub Copilot, Cursor und Claude übernehmen viele Aufgaben, die früher Einstiegspositionen ausmachten – einfache Bug-Fixes, Code-Reviews, Dokumentation und Standard-Implementierungen.'
           ],
           callout: {
             type: 'warning',
-            text: '⚠️ Laut einer Studie von Stack Overflow 2025 sank die Zahl der Junior-Stellenausschreibungen deutlich. Gleichzeitig stieg die Nachfrage nach "AI-fluent" Senior-Entwicklern signifikant.'
+            text: '⚠️ Laut einer Studie von Stack Overflow 2025 sank die Zahl der Junior-Stellenausschreibungen deutlich. Gleichzeitig stieg die Nachfrage nach "AI-fluent" Senior-Entwickler*innen signifikant.'
           }
         },
         controlQuestion: {
-          question: 'Warum werden weniger Junior-Entwickler eingestellt?',
+          question: 'Warum werden weniger Junior-Entwickler*innen eingestellt?',
           options: [
             {
               text: 'A) Zu viele Absolventen auf dem Markt',
@@ -1003,7 +1003,7 @@ export const moduleData: Record<string, ModuleContent> = {
         content: {
           paragraphs: [
             'Googles KI-Chatbot Gemini führte 2025 die „Year in Search"-Highlights an – noch vor Charlie Kirk und Papst Leo XIV. Seit September verzeichnete Google einen sprunghaften Anstieg bei Gemini-Suchen, als das Unternehmen KI-Updates für Chrome, Suche und Android vorstellte.',
-            'Auslöser war Gemini 3, die neueste Version mit Alphabets hauseigenen Chips. Lob kam von OpenAI-Chef Sam Altman und Nvidia. Salesforce-Chef Marc Benioff kündigte nach einem Test an, auf ChatGPT zu verzichten: „Der Sprung ist wahnsinnig – Schlussfolgern, Tempo, alles schärfer und schneller." Gemini 3 führt nun Benchmarks wie „Humanity\'s Last Exam" an und setzte OpenAI unter Druck.'
+            'Auslöser war Gemini 3, die neueste Version mit Alphabets hauseigenen Chips. Lob kam von OpenAI-Chef Sam Altman und Nvidia. Salesforce-Chef Marc Benioff kündigte nach einem Test an, auf ChatGPT zu verzichten: „Der Sprung ist wahnsinnig – Schlussfolgern, Tempo, alles ist schärfer und schneller." Gemini 3 führt nun Benchmarks wie „Humanity\'s Last Exam" an und setzte OpenAI unter Druck.'
           ],
           callout: {
             type: 'success',
@@ -1038,7 +1038,7 @@ export const moduleData: Record<string, ModuleContent> = {
         preview: 'Wenn KI das Internet mit Müll überflutet',
         content: {
           paragraphs: [
-            '"AI Slop" bezeichnet minderwertige, KI-generierte Inhalte, die das Internet zunehmend überschwemmen: Spam-Artikel, gefälschte Produktbewertungen, automatisch erstellte Social-Media-Posts. 2025 schätzt man, dass Ein grosser Teil der neuen Online-Inhalte KI-generiert sind – oft ohne Qualitätskontrolle.'
+            '"AI Slop" bezeichnet minderwertige, KI-generierte Inhalte, die das Internet zunehmend überschwemmen: Spam-Artikel, gefälschte Produktbewertungen, automatisch erstellte Social-Media-Posts. Man schätzt, dass ein grosser Teil der neuen Online-Inhalte KI-generiert sind – oft ohne Qualitätskontrolle.'
           ],
           callout: {
             type: 'warning',
@@ -1143,7 +1143,7 @@ export const moduleData: Record<string, ModuleContent> = {
             feedback: '❌ Nein, Training bezieht sich auf den Lernprozess.'
           },
           {
-            text: 'Die Vorbereitung der Benutzer',
+            text: 'Die Vorbereitung der Benutzer*innen',
             correct: false,
             feedback: '❌ Nein, Training bezieht sich auf das KI-Modell selbst.'
           }
@@ -1332,7 +1332,7 @@ export const moduleData: Record<string, ModuleContent> = {
             'Gesundheit: TARDOC ersetzt TARMED als neues Tarifsystem für ärztliche Leistungen',
             'Digital: E-ID wird Ende 2026 verfügbar – App "swiyu" ermöglicht digitale Identität',
             'Energie: Elektrizitätsgemeinschaften erlauben gemeinsame Stromnutzung in Quartieren',
-            'Baurecht: 60-tägiges Mängelrügerecht für Käufer, Nachbesserungsrecht kann nicht ausgeschlossen werden'
+            'Baurecht: 60-tägiges Mängelrügerecht für Käufer*innen, Nachbesserungsrecht kann nicht ausgeschlossen werden'
           ],
           examples: [
             {
@@ -1394,7 +1394,7 @@ export const moduleData: Record<string, ModuleContent> = {
           examples: [
             {
               title: 'US-Midterms als Richtungsentscheidung',
-              description: 'Die Midterm-Wahlen 2026 entscheiden über die Mehrheiten im Repräsentantenhaus und einem Drittel des Senats. Historisch verliert die Präsidentenpartei oft Sitze – was Trumps Agenda beeinflussen könnte.',
+              description: 'Die Midterm-Wahlen 2026 entscheiden über die Mehrheiten im Repräsentantenhaus sowie über ein Drittel der Sitze im Senat. Historisch verliert die Präsidentenpartei oft Sitze – was Trumps Agenda beeinflussen könnte.',
               type: 'info'
             }
           ],
@@ -1569,7 +1569,7 @@ export const moduleData: Record<string, ModuleContent> = {
             feedback: '✅ Richtig! Self-Sovereign Identity bedeutet: Der Bund kann nicht nachvollziehen, wann oder wofür die E-ID genutzt wird.'
           },
           {
-            text: 'Die E-ID ist verpflichtend für alle Schweizer',
+            text: 'Die E-ID ist verpflichtend für alle Schweizer*innen',
             correct: false,
             feedback: '❌ Falsch. Die E-ID ist freiwillig.'
           }
@@ -1703,17 +1703,17 @@ export const moduleData: Record<string, ModuleContent> = {
       },
       {
         type: 'knowledge',
-        question: 'Welches neue Recht erhalten Käufer im Schweizer Baurecht ab 2026?',
+        question: 'Welches neue Recht erhalten Käufer*innen im Schweizer Baurecht ab 2026?',
         options: [
           {
             text: '60-tägiges Mängelrügerecht, Nachbesserungsrecht kann nicht ausgeschlossen werden',
             correct: true,
-            feedback: '✅ Richtig! Käufer haben 60 Tage Zeit Mängel zu rügen und ein Nachbesserungsrecht.'
+            feedback: '✅ Richtig! Käufer*innen haben 60 Tage Zeit Mängel zu rügen und ein Nachbesserungsrecht.'
           },
           {
             text: 'Kostenlose Renovierung aller Altbauten',
             correct: false,
-            feedback: '❌ Falsch. Es geht um Käuferrechte bei Neubauten.'
+            feedback: '❌ Falsch. Es geht um Käufer*innenrechte bei Neubauten.'
           },
           {
             text: 'Verbot von Hypotheken',
