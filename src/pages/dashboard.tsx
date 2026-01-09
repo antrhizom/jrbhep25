@@ -154,11 +154,26 @@ export default function Dashboard() {
       // ✅ FIX: Calculate points dynamically from modules instead of using corrupted totalPoints
       const calculateUserPoints = (user: UserData) => {
         if (!user.modules) return 0
-        return Object.values(user.modules).reduce((sum, module) => sum + (module.score || 0), 0)
+        
+        // Only count the 4 main modules
+        const mainModules = ['fotos2025', 'jahresanalyse', 'ki-transformation', 'ausblick2026']
+        let userTotal = 0
+        
+        mainModules.forEach(moduleId => {
+          if (user.modules[moduleId]) {
+            const score = user.modules[moduleId].score || 0
+            userTotal += score
+          }
+        })
+        
+        console.log('User points:', user.lernname, userTotal, user.modules)
+        return userTotal
       }
 
       const totalPoints = usersWithFeedback.reduce((sum, u) => sum + calculateUserPoints(u), 0)
       const avgPoints = Math.round(totalPoints / usersWithFeedback.length)
+      
+      console.log('FINAL:', { totalPoints, avgPoints, userCount: usersWithFeedback.length })
 
       const totalSatisfaction = usersWithFeedback.reduce(
         (sum, u) => sum + (u.overallFeedback?.jahresrueckblick2025?.overallSatisfaction || 0),
