@@ -154,7 +154,7 @@ export default function Dashboard() {
       // Calculate statistics
       const totalPoints = usersWithFeedback.reduce((sum, u) => sum + (u.totalPoints || 0), 0)
       const avgPoints = Math.round(totalPoints / usersWithFeedback.length)
-
+      console.log('DEBUG:', { totalPoints, avgPoints, userCount: usersWithFeedback.length })
       const totalSatisfaction = usersWithFeedback.reduce(
         (sum, u) => sum + (u.overallFeedback?.jahresrueckblick2025?.overallSatisfaction || 0),
         0
