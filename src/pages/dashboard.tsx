@@ -151,7 +151,7 @@ export default function Dashboard() {
         return
       }
 
-      // ✅ FIX: Calculate points dynamically from modules instead of using corrupted totalPoints
+      // ✅ FIX: Calculate points dynamically from modules with 400 point cap
       const calculateUserPoints = (user: UserData) => {
         if (!user.modules) return 0
         
@@ -166,14 +166,12 @@ export default function Dashboard() {
           }
         })
         
-        console.log('User points:', user.lernname, userTotal, user.modules)
-        return userTotal
+        // ✅ Cap at 400 points (maximum possible score)
+        return Math.min(userTotal, 400)
       }
 
       const totalPoints = usersWithFeedback.reduce((sum, u) => sum + calculateUserPoints(u), 0)
       const avgPoints = Math.round(totalPoints / usersWithFeedback.length)
-      
-      console.log('FINAL:', { totalPoints, avgPoints, userCount: usersWithFeedback.length })
 
       const totalSatisfaction = usersWithFeedback.reduce(
         (sum, u) => sum + (u.overallFeedback?.jahresrueckblick2025?.overallSatisfaction || 0),
