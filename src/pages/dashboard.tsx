@@ -151,10 +151,15 @@ export default function Dashboard() {
         return
       }
 
-      // Calculate statistics
-      const totalPoints = usersWithFeedback.reduce((sum, u) => sum + (u.totalPoints || 0), 0)
+      // ✅ FIX: Calculate points dynamically from modules instead of using corrupted totalPoints
+      const calculateUserPoints = (user: UserData) => {
+        if (!user.modules) return 0
+        return Object.values(user.modules).reduce((sum, module) => sum + (module.score || 0), 0)
+      }
+
+      const totalPoints = usersWithFeedback.reduce((sum, u) => sum + calculateUserPoints(u), 0)
       const avgPoints = Math.round(totalPoints / usersWithFeedback.length)
-      console.log('DEBUG:', { totalPoints, avgPoints, userCount: usersWithFeedback.length })
+
       const totalSatisfaction = usersWithFeedback.reduce(
         (sum, u) => sum + (u.overallFeedback?.jahresrueckblick2025?.overallSatisfaction || 0),
         0
